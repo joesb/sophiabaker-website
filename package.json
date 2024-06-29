@@ -1,0 +1,33 @@
+{
+  "name": "sophiabaker.co.uk",
+  "version": "1.0.0",
+  "repository": "git@github.com:joesb/sophiabaker-website.git",
+  "author": "Joe Baker <joesbaker@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "(yarn build:dryrun) && npx @11ty/eleventy",
+    "build:dryrun": "(yarn sass:build) && (npx @11ty/eleventy --dryrun)",
+    "clean": "npx rimraf -v _site/ src/_includes/assets/css/",
+    "watch": "npx eleventy --watch",
+    "serve": "(yarn clean) && (yarn sass:build) && (npx eleventy --dryrun) && npx @11ty/eleventy --serve & sass --watch src/sass/:src/_includes/assets/css/",
+    "up": "yarn serve",
+    "sass:build": "sass --style=compressed --no-source-map src/sass/:src/_includes/assets/css/ & npx postcss src/_includes/assets/css/*.css --no-map --use autoprefixer -d src/_includes/assets/css",
+    "sass:dev": "sass --watch --update --style=expanded --no-source-map src/sass/:src/_includes/assets/css/"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "autoprefixer": "^10.4.19",
+    "clean-css": "^5.3.3",
+    "dotenv": "^16.4.5",
+    "markdown-it": "^14.1.0",
+    "markdown-it-attrs": "^4.1.6",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "postcss-discard-comments": "^7.0.1",
+    "rimraf": "^5.0.7",
+    "sass": "^1.77.6",
+    "sass-autoprefixer": "^1.0.1",
+    "uglify-js": "^3.18.0"
+  }
+}

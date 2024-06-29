@@ -1,0 +1,18 @@
+// Fonts
+$primary-font: "Raleway", var(--font-sans);
+$secondary-font: "Raleway", var(--font-sans);
+$headings-font: "Bebas Neue", var(--font-sans);
+
+// Font weight
+$base-font-weight-bold: 600;
+$base-font-weight-regular: 300;
+$base-font-weight-medium: 500;
+$headings-font-weight: 400;
+
+// Custom media queries
+$break-very-small: 22.5rem; // >= 360px @ 16px
+$break-small: 30rem; // >= 480px @ 16px
+$break-medium: 48rem; // >= 768px @ 16px
+$break-large: 64rem; // >= 1024px @ 16px
+$break-extra-large: 90rem; // >= 1440px @ 16px
+$break-largest: 120rem; // >= 1920px @ 16px

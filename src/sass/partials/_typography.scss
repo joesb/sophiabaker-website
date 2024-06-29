@@ -1,0 +1,176 @@
+@use "../common/variables";
+@use "../tools/mixins";
+@use "../tools/px-to-rem";
+
+/* ==========================================================================
+TYPOGRAPHY
+========================================================================== */
+
+p,
+.body-style {
+  width: 100%;
+  font-family: variables.$primary-font;
+  font-size: var(--font-size-fluid-01);
+  font-weight: variables.$base-font-weight-regular;
+  line-height: var(--font-lineheight-3);
+  font-style: normal;
+  color: inherit;
+  margin-block: 0.75rem;
+}
+
+.secondary-font {
+  font-family: variables.$secondary-font;
+}
+
+.headings-font {
+  font-family: variables.$headings-font;
+}
+
+/* Shared styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1-style,
+.h2-style,
+.h3-style,
+.h4-style,
+.h5-style,
+.h6-style {
+  color: inherit;
+  font-family: variables.$headings-font;
+  font-weight: variables.$headings-font-weight;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  margin: 0;
+  mix-blend-mode: normal;
+  margin-block: 1.5rem 0.75rem;
+}
+
+h1,
+.h1-style {
+  font-size: var(--font-size-fluid-3);
+}
+//   font-size: $h1-font-size-mobile;
+//   line-height: $h1-line-height-mobile;
+//   font-weight: $headings-font-weight;
+//   margin-bottom: px-to-rem(1.5 * $base-space);
+
+//   @media only screen and (min-width: $tablet) {
+//     font-size: $h1-font-size;
+//     line-height: $h1-line-height;
+//   }
+// }
+
+h2,
+.h2-style {
+  font-size: var(--font-size-fluid-2);
+}
+//   font-size: $h2-font-size-mobile;
+//   line-height: $h2-line-height-mobile;
+//   font-weight: $headings-font-weight;
+//   margin-bottom: px-to-rem(20px);
+
+//   @include respond-to('medium') {
+//     font-size: $h2-font-size;
+//     line-height: $h2-line-height;
+//     margin-bottom: px-to-rem(23px);
+//   }
+// }
+
+h3,
+.h3-style {
+  font-size: var(--font-size-fluid-1);
+}
+//   font-size: $h3-font-size-mobile;
+//   line-height: $h3-line-height-mobile;
+//   font-weight: $headings-font-weight;
+//   margin-bottom: px-to-rem(12px);
+
+//   @include respond-to('medium') {
+//     font-size: $h3-font-size;
+//     line-height: $h3-line-height;
+//     margin-bottom: px-to-rem(16px);
+//   }
+// }
+
+// // Subheading, slightly different styling.
+h4,
+.h4-style {
+  font-size: var(--font-size-fluid-01);
+}
+
+h5,
+.h5-style {
+  font-size: var(--font-size-fluid-0);
+}
+
+//   font-size: $h4-font-size-mobile;
+//   line-height: $h4-line-height-mobile;
+
+//   @include respond-to('medium') {
+//     font-size: $h4-font-size;
+//     line-height: $h4-line-height;
+//   }
+// }
+
+// Helpers - Additions to help with reuseable code approach. Add classes to achieve styles rather than nesting.
+.bold {
+  font-weight: variables.$base-font-weight-bold;
+}
+
+.centered {
+  text-align: center;
+}
+
+.hide-text {
+  @include mixins.hide-text;
+}
+
+.visually-hidden {
+  @include mixins.visually-hidden;
+}
+
+.do-not-display {
+  @include mixins.do-not-display;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.small {
+  font-size: var(--font-size-fluid-000);
+  line-height: var(--font-lineheight-2) !important;
+}
+
+.large {
+  font-size: var(--font-size-fluid-1);
+}
+
+.header-highlight {
+  border-left: 2px solid ;
+  padding-left: px-to-rem.px-to-rem(20px);
+  margin: px-to-rem.px-to-rem(34px) 0;
+
+  blockquote {
+    margin: 0;
+  }
+}
+
+.caption {
+  font-family: variables.$primary-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: px-to-rem.px-to-rem(12px);
+  line-height: px-to-rem.px-to-rem(16px);
+  text-align: center;
+}
+
+.inline-text {
+  display: inline;
+}
+

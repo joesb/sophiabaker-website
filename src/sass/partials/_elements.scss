@@ -1,0 +1,133 @@
+@use "sass:color";
+@use "../common/base-variables";
+@use "../common/variables";
+@use "../tools/px-to-rem";
+
+/* ==========================================================================
+ELEMENTS
+========================================================================== */
+
+/**
+ * Simple page-level setup.
+ *
+ * 1. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 2. Ensure the page always fills at least the entire height of the viewport.
+ */
+
+ :root {
+    font-size: base-variables.$root-font-size;
+
+    // colors
+    // cf. https://www.canva.com/colors/color-palettes/watermelon-abstract/
+    --color-chili-pepper: #DF362D;
+    --color-jet-black: #1A1A1D;
+    --color-ivory: #D3D3CB;
+    --color-midnight-blue: #0D698B;
+
+    --color-text: var(var(--color-jet-black));
+  }
+  
+  html {
+    font-family: variables.$primary-font;
+    font-weight: variables.$base-font-weight-regular;
+    color: var(--color-text);
+  
+    box-sizing: border-box;
+    min-height: 100%; /* [2] */
+    overflow-y: scroll; /* [1] */
+  }
+  
+  * {
+    &,
+    &::before,
+    &::after {
+      box-sizing: inherit;
+    }
+  }
+  
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+  
+  button {
+    background: none;
+    border: none;
+  }
+  
+  ul,
+  ol {
+    font-family: variables.$secondary-font;
+    margin: 0;
+    padding: 0;
+  
+    li {
+      font-size: var(--font-size-fluid-0);
+  
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  
+  main {
+    ul,
+    ol {
+      margin-bottom: px-to-rem.px-to-rem(30px);
+      padding-left: px-to-rem.px-to-rem(40px);
+  
+      ul,
+      ol {
+        margin-bottom: 0;
+      }
+  
+      li {
+        margin: px-to-rem.px-to-rem(9px);
+        line-height: px-to-rem.px-to-rem(27px);
+      }
+  
+      hr {
+        height: px-to-rem.px-to-rem(1px);
+        border: none;
+      }
+    }
+  }
+
+// Links, anchors
+
+a {
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--text-highlight-1);
+    text-decoration: underline;
+  }
+}
+
+:where(hr) {
+  background-color: var(--surface-black-pale);
+  margin-block: var(--size-fluid-2);
+}
+
+blockquote {
+  border-color: var(--surface-teal);
+  max-inline-size: var(--size-content-3);
+  margin-block: var(--size-fluid-2);
+  padding-block: 0;
+
+  &.bq-alt{ 
+    border-inline-start-width: 0;
+
+    >* {
+      font-size: var(--font-size-fluid-1);
+      line-height: var(--font-lineheight-2) !important;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<head>
+  <!-- Analytics & Tag Manager -->
+  {% if env.isProd %}
+    {% include "layouts/components/google-tagmanager.njk" %}
+  {% endif %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  {% set siteName = [ meta.title, meta.subtitle] %}
+  <title>{{ pageTitle or title or siteName | join(" ") }} | {{ siteName | join(" ") }}</title>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/apple-touch-icon.png" type="image/png">
+  <link rel="icon" href="/static/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/static/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
+
+  {% if metadesc %}
+  <meta name="description" content="{{ metadesc }}" />
+  {% endif %}
+
+  {# Google Fonts #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  {% set css %}
+    {% include "assets/css/styles.css" %}
+  {% endset %}
+  <style>{{ css | safe }}</style>
+
+  {% if styles %}
+    {% for style in styles %}
+      {% set include_style %}assets/css/{{ style }}{% endset %}
+      {% set include_css %}
+        {% include include_style %}
+      {% endset %}
+    <style>{{ include_css | cssmin | safe }}</style>
+    {% endfor %}
+  {% endif %}
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  {% set js %}
+    {% include "assets/js/inline.js" %}
+  {% endset %}
+  <script>{{ js | jsmin | safe }}</script>
+
+  {# {% include "layouts/components/head-social-cards.njk" %} #}
+
+  {% if canonical %}
+  <link rel="canonical" href="{{ canonical }}" />
+  {% endif %}
+</head>
