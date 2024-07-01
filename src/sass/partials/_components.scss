@@ -10,11 +10,13 @@ COMPONENTS
 // @use "../components/site-footer";
 @use "../components/content_canvas";
 @use "../components/faux-block-link";
+@use "../components/modal-click";
 // @use "../components/page";
 // @use "../components/metadata";
 @use "../components/picture";
 // @use "../components/link-internal";
 // @use "../components/jumbotron";
+@use "../components/lists";
 
 // Index pages
 @use "../components/index-list";
@@ -23,3 +25,4 @@ COMPONENTS
 // Other
 // @use "../components/glyphicon";
 @use "../components/helpers-layout";
+@use "../components/portfolio";

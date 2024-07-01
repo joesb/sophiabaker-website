@@ -71,6 +71,13 @@ module.exports = function (eleventyConfig) {
 			</picture>`;
 	});
 
+  eleventyConfig.addPairedShortcode("figure", function(content, classes = '') {
+    return `<figure class="figure ${classes}">` + content +'</figure>'});
+
+  eleventyConfig.addPairedShortcode("caption", function(caption, classes = '') {
+    return `<figcaption class="figcaption ${classes}">` + caption + '</figcaption>'});
+
+
   eleventyConfig.addPassthroughCopy('static/');
   eleventyConfig.addWatchTarget('./src/sass/');
 

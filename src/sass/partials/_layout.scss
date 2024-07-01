@@ -10,11 +10,10 @@ body {
   display: grid;
   grid-auto-flow: row;
   grid-template-areas:
-    "head head head head head"
-    "main main main main main"
-    "foot foot foot foot foot"
+    "head"
+    "main"
+    "foot"
   ;
-  grid-template-columns: 2fr 1fr minmax(30ch, var(--size-lg)) 1fr 2fr;
   grid-template-rows: minmax(px-to-rem.px-to-rem(100px), auto) auto auto;
 }
 
