@@ -1,23 +1,6 @@
 <!doctype html>
 <html {% if section %} data-current="{{ section }}"{% endif %} lang="en">
 
-  {% if header.background or client.logo %}
-    {% set clientcss %}
-    <style type="text/css">
-      {% if header.background %}
-      .header-main.header-main-client-gradient {
-        --client-color: {{ header.background }}
-      }
-      {% endif %}
-      {% if client.logo %}
-      .header-main .client-logo {
-        --client-logo: url("{{ client.logo }}");
-      }
-      {% endif %}
-    </style>
-    {% endset %}
-  {% endif %}
-
   {% include "layouts/components/head.njk" %}
 
   <body>

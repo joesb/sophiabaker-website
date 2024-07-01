@@ -1,0 +1,85 @@
+@use "../common/variables";
+@use "../tools/mixins";
+@use "../tools/px-to-rem";
+
+.pagination {
+  margin-top: var(--size-4);
+
+  ol {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pagination-item {
+    position: relative;
+    margin: var(--size-2);
+    height: var(--size-4);
+
+    span {
+      @include mixins.hide-text;
+
+      &::before {
+        cursor: not-allowed;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: inline-block;
+        width: 1rem;
+        font-size: 1.5rem;
+        color: var(--color-text);
+        z-index: 2;
+        text-indent: 0;
+      }
+    }
+
+    a {
+      span {
+        &::before {
+          cursor: pointer;
+          color: var(--color-text);
+        }
+      }
+    }
+
+    &.first {
+      span {
+        &::before {
+          content: '\00AB';
+        }
+      }
+    }
+
+    &.previous {
+      span {
+        &::before {
+          content: '\2039';
+        }
+      }
+    }
+
+    &.next {
+      span {
+        &::before {
+          content: '\203A';
+        }
+      }
+    }
+
+    &.last {
+      span {
+        &::before {
+          content: '\00BB';
+        }
+      }
+    }
+  }
+
+  .current {
+    font-weight: variables.$base-font-weight-bold;
+  }
+}

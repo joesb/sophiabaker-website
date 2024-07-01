@@ -6,6 +6,7 @@ const postCSSDC = require('postcss-discard-comments');
 const markdownIt = require("markdown-it");
 const markdownItAttrs = require('markdown-it-attrs');
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const Image = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
   // 11ty plugins
@@ -37,6 +38,38 @@ module.exports = function (eleventyConfig) {
     }
     return '';
   });
+
+  // Return responsive images
+  eleventyConfig.addShortcode("image", async function(src, alt, cls, pictureCls = "", sizes = "(min-width: 30em) 50vw, 100vw", widths = [300, 600, 1000, 1980]) {
+		if(alt === undefined) {
+			// You bet we throw an error on missing alt (alt="" works okay)
+			throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+		}
+
+		let metadata = await Image(src, {
+			widths: widths,
+			formats: ['webp', 'jpeg'],
+      urlPath: "/static/img/",
+      outputDir: "./static/img/"
+		});
+
+		let lowsrc = metadata.jpeg[0];
+		let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+
+		return `<picture class="${pictureCls}">
+			${Object.values(metadata).map(imageFormat => {
+				return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
+			}).join("\n")}
+				<img
+					src="${lowsrc.url}"
+					width="${highsrc.width}"
+					height="${highsrc.height}"
+          class="${cls}"
+					alt="${alt}"
+					loading="lazy"
+					decoding="async">
+			</picture>`;
+	});
 
   eleventyConfig.addPassthroughCopy('static/');
   eleventyConfig.addWatchTarget('./src/sass/');

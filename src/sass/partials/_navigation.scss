@@ -1,0 +1,28 @@
+@use "../common/variables";
+@use "../tools/px-to-rem";
+@use "../tools/respond-to";
+
+.main-nav,
+.footer-main__nav,
+.footer__nav {
+  font-size: var(--font-size-fluid-0);
+
+  ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+
+    li {
+      font-weight: variables.$base-font-weight-medium;
+    }
+
+    a {
+      color: var(--text-1);
+      font-weight: variables.$base-font-weight-medium;
+      text-decoration: none;
+      display: block;
+      padding: var(--size-1) var(--size-2);
+      margin-inline: var(--size-2);
+    }
+  }
+}

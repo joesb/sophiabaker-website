@@ -1,0 +1,16 @@
+<nav aria-label="Main navigation">
+  <div class="main-nav">
+
+    {% set navPages = collections.all | eleventyNavigation %}
+    <ul class="main-nav--list">
+    {%- for entry in navPages %}
+    {% if entry.url != "/" %}
+      <li class="main-nav--list--item">
+        <a href="{{ entry.url }}" class="main-nav--list--item-link{% activepath entry.url, page.url, 'current', ' ' %}">{{ entry.title }}</a>
+      </li>
+    {% endif %}
+    {%- endfor %}
+    </ul>
+
+  </div>
+</nav>

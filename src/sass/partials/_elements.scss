@@ -1,6 +1,5 @@
-@use "sass:color";
 @use "../common/base-variables";
-@use "../common/variables";
+@use "../common/variables" as var;
 @use "../tools/px-to-rem";
 
 /* ==========================================================================
@@ -21,17 +20,25 @@ ELEMENTS
 
     // colors
     // cf. https://www.canva.com/colors/color-palettes/watermelon-abstract/
-    --color-chili-pepper: #DF362D;
-    --color-jet-black: #1A1A1D;
-    --color-ivory: #D3D3CB;
-    --color-midnight-blue: #0D698B;
+    --color-chili-pepper: #{var.$color-chili-pepper};
+    --color-jet-black: #{var.$color-jet-black};
+    --color-jet-black-lighter: #{var.$color-jet-black-lighter};
+    --color-ivory: #{var.$color-ivory};
+    --color-ivory-dark: #{var.$color-ivory-dark};
+    --color-ivory-darker: #{var.$color-ivory-darker};
+    --color-midnight-blue: #{var.$color-midnight-blue};
 
-    --color-text: var(var(--color-jet-black));
+    --color-text: var(--color-jet-black);
+    --color-text-lighter: var(--color-jet-black-lighter);
+
+    --color-background: var(--color-ivory);
+    --color-background-dark: var(--color-ivory-dark);
+    --color-background-darker: var(--color-ivory-darker);
   }
   
   html {
-    font-family: variables.$primary-font;
-    font-weight: variables.$base-font-weight-regular;
+    font-family: var.$primary-font;
+    font-weight: var.$base-font-weight-regular;
     color: var(--color-text);
   
     box-sizing: border-box;
@@ -64,7 +71,7 @@ ELEMENTS
   
   ul,
   ol {
-    font-family: variables.$secondary-font;
+    font-family: var.$secondary-font;
     margin: 0;
     padding: 0;
   
@@ -103,7 +110,7 @@ ELEMENTS
 // Links, anchors
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
 
   &:hover {
     color: var(--text-highlight-1);

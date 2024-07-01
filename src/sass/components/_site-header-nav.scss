@@ -1,5 +1,65 @@
 @use "../tools/mixins";
+@use "../common/variables" as var;
+@use "../tools/respond-to" as rt;
+@use "../tools/px-to-rem" as p2r;
 
 .css-nav {
   @include mixins.visually-hidden;
+}
+
+.header-main__nav {
+  display: none;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: p2r.px-to-rem(145px) p2r.px-to-rem(25px) p2r.px-to-rem(25px) p2r.px-to-rem(25px);
+  background-color: var(--color-background);
+}
+
+.open-mobile {
+  .header-main__nav {
+    display: block;
+  }
+}
+
+.main-nav--list--item-link {
+  &:hover {
+    background-color: var(--color-background-dark);
+    color: var(--text-1);
+  }
+
+  &.current {
+    // background-color: var(--surface-4);
+    background-color: var(--color-background-darker);
+    font-weight: var.$base-font-weight-bold;
+  }
+}
+
+@include rt.respond-to('medium') {
+  .header-main__nav {
+    display: block;
+    position: relative;
+    height: unset;
+    padding: 0;
+  }
+
+  .main-nav--list {
+    display: flex;
+    justify-content: center;
+
+    a {
+      padding-block: p2r.px-to-rem(5px);
+    }
+  }
+
+  .main-nav--list--item {
+    padding: 0;
+
+    &:not(:last-child) {
+      border-right: 1px solid var(--color-text);
+    }
+  }
 }

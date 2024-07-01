@@ -4,20 +4,22 @@ COMPONENTS
 
 @use "../components/site-header";
 @use "../components/site-header-nav";
+@use "../components/site-logo";
 @use "../components/header-main";
 // @use "../components/site-content";
 // @use "../components/site-footer";
 @use "../components/content_canvas";
-// @use "../components/faux-block-link";
+@use "../components/faux-block-link";
 // @use "../components/page";
 // @use "../components/metadata";
-// @use "../components/picture";
+@use "../components/picture";
 // @use "../components/link-internal";
 // @use "../components/jumbotron";
 
 // Index pages
-// @use "../components/index-list";
-// @use "../components/pagination";
+@use "../components/index-list";
+@use "../components/pagination";
 
 // Other
 // @use "../components/glyphicon";
+@use "../components/helpers-layout";

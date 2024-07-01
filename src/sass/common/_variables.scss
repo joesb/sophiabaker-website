@@ -1,3 +1,4 @@
+@use "sass:color";
 // Fonts
 $primary-font: "Raleway", var(--font-sans);
 $secondary-font: "Raleway", var(--font-sans);
@@ -8,6 +9,16 @@ $base-font-weight-bold: 600;
 $base-font-weight-regular: 300;
 $base-font-weight-medium: 500;
 $headings-font-weight: 400;
+
+// Colors
+$color-chili-pepper: #DF362D;
+$color-jet-black: #1A1A1D;
+$color-ivory: #D3D3CB;
+$color-midnight-blue: #0D698B;
+
+$color-jet-black-lighter: color.adjust($color-jet-black, $lightness: 15%);
+$color-ivory-dark: color.adjust($color-ivory, $lightness: -10%);
+$color-ivory-darker: color.adjust($color-ivory, $lightness: -15%);
 
 // Custom media queries
 $break-very-small: 22.5rem; // >= 360px @ 16px

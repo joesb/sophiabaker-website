@@ -1,0 +1,9 @@
+.site-logo {
+  color: var(--color-text);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-midnight-blue);
+    text-decoration: none;
+  }
+}

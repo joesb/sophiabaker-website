@@ -1,6 +1,15 @@
 @use "../tools/px-to-rem";
 @use "../tools/respond-to" as rt;
 
+.header-main {
+  position: relative;
+}
+
+.header-main__logo {
+  position: relative;
+  z-index: 10;
+}
+
 .header-main__menu {
   height: 100%;
   cursor: pointer;
@@ -44,7 +53,7 @@
 .header-main {
   padding-block: 2.5rem;
   margin-block-end: 2.5rem;
-  background: var(--color-ivory);
+  background: var(--color-background);
 
   :where(h1) {
     margin-block: 1.5rem;
@@ -143,32 +152,6 @@
     display: block;
     position: relative;
     height: unset;
-    padding: px-to-rem.px-to-rem(16px);
-  }
-
-  .main-nav {
-    ul {
-      display: flex;
-      justify-content: center;
-
-      a {
-        padding-block: px-to-rem.px-to-rem(5px);
-      }
-    }
-
-    li {
-      padding: 0;
-
-      &:not(:last-child) {
-        border-right: 1px solid var(--text-alt-1);
-      }
-
-      &.current {
-        a {
-          color: var(--text-highlight-1);
-        }
-      }
-    }
   }
 
   .footer-main__nav__list {
