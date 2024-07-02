@@ -17,23 +17,32 @@ scripts:
 
   <ul class="portfolio-list content-canvas-item-wide bare-list" id="portfolio-lightbox">
   {% for item in portfolio %}
-    <li class="modal-click-parent">
-      {% figure "padding-block content-canvas-item-wide" %}
-        {% image item.image.path, item.image.alt  %}
-        <aside class="modal-picture-caption">
-        {% caption %}
-          <div class="caption-content">{{ item.caption.content }}</div>
-          {% if item.caption.credit %}
-          <div class="caption-credit">{{ item.caption.credit }}</div>
-          {% endif %}
-        {% endcaption %}
-        </aside>
-      {% endfigure %}
-      <a href="#" class="modal-click">
-        <button type="button" class="modal-click--button">
-          <span class="modal-click--button-text hide-text" aria-hidden="true">view full screen</span>
-        </button>
-      </a>
+    <li class="modal-click-parent portfolio-list-item">
+      <div class="padding-block modal-picture">
+        {% figure "portfolio-item--figure" %}
+          {% image item.image.path, item.image.alt, 'portfolio-item--image','portfolio-item--picture' %}
+          <aside class="modal-picture-caption portfolio-item--caption">
+          {% caption %}
+            <div class="caption-content">{{ item.caption.content }}</div>
+            {% if item.caption.credit %}
+            <div class="caption-credit">{{ item.caption.credit }}</div>
+            {% endif %}
+          {% endcaption %}
+          </aside>
+        {% endfigure %}
+      </div>
+      <nav class="modal-click-nav">
+        <a href="#" class="modal-click">
+          <button type="button" class="modal-click--button">
+            <span class="modal-click--button-text hide-text" aria-hidden="true">view full screen</span>
+          </button>
+        </a>
+        <a href="#" class="modal-click--info">
+          <button type="button" class="modal-click--button-info">
+            <span class="modal-click--button-text hide-text" aria-hidden="true">Toggle caption</span>
+          </button>
+        </a>
+      </nav>
     </li>
   {% endfor %}
   </ul>

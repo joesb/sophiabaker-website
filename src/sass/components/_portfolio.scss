@@ -1,5 +1,54 @@
+@use "../tools/respond-to" as rt;
+
 .portfolio-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+  // grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
   gap: var(--size-4);
+}
+
+.portfolio-list-item {
+  background-color: var(--color-ivory);
+
+  &.lightbox-active {
+    background-color: var(--color-jet-black-light);
+  }
+}
+
+.portfolio-item--figure {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 4fr 1fr;
+  grid-template-areas:
+    "picture"
+    "caption"
+  ;
+}
+
+.portfolio-item--picture {
+  grid-area: "picture";
+}
+
+.portfolio-item--caption {
+  grid-area: "caption";
+}
+
+.lightbox-active {
+
+  .portfolio-item--figure {
+    height: 100vh;
+  }
+
+  .portfolio-item--caption {
+    color: var(--color-ivory);
+  }
+}
+
+@include rt.respond-to('large') {
+  .portfolio-item--figure {
+    grid-auto-flow: column;
+    grid-template-rows: unset;
+    grid-template-columns: 4fr 1fr;
+    grid-template-areas: "picture caption";
+    align-content: center;
+  }
 }
