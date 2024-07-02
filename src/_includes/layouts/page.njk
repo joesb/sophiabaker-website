@@ -20,15 +20,20 @@ scripts:
     <li class="modal-click-parent">
       {% figure "padding-block content-canvas-item-wide" %}
         {% image item.image.path, item.image.alt  %}
-        {% caption "do-not-display" %}
+        <aside class="modal-picture-caption">
+        {% caption %}
           <div class="caption-content">{{ item.caption.content }}</div>
           {% if item.caption.credit %}
           <div class="caption-credit">{{ item.caption.credit }}</div>
           {% endif %}
         {% endcaption %}
+        </aside>
       {% endfigure %}
-
-      <a href="#" class="modal-click"><span class="hide-text" aria-hidden="true">view full screen</span></a>
+      <a href="#" class="modal-click">
+        <button type="button" class="modal-click--button">
+          <span class="modal-click--button-text hide-text" aria-hidden="true">view full screen</span>
+        </button>
+      </a>
     </li>
   {% endfor %}
   </ul>
