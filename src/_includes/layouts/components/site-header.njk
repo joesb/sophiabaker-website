@@ -1,14 +1,12 @@
     <header role="banner" class="header-main" id="main-navigation">
-			<div class="header-main__inner content-canvas-item-wide container container--wide container--flex">
-				<div class="content-canvas">
-					<div class="header-main__logo">
-						{% if page.url !== '/' %}<a href="{{ '/' | url }}" class="site-logo">
-							<h1 class="site-logo--title">{{ meta.title }}</h1>
-						</a>
-						{% else %}
+			<div class="header-main__inner">
+				<div class="header-main__logo">
+					{% if page.url !== '/' %}<a href="{{ '/' | url }}" class="site-logo">
 						<h1 class="site-logo--title">{{ meta.title }}</h1>
-						{% endif %}
-					</div>
+					</a>
+					{% else %}
+					<h1 class="site-logo--title">{{ meta.title }}</h1>
+					{% endif %}
 				</div>
 				<div class="header-main__nav">
 					{% include "layouts/components/site-header--nav.njk" %}

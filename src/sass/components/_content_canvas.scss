@@ -10,9 +10,9 @@
     [wide-start]
       minmax(0, 1fr)
     [main-start]
-      minmax(10ch, calc(var(--size-md) - 3rem))
+      minmax(10ch, calc(var(--size-sm) - 3rem))
     [main-mid]
-      minmax(30ch, auto)
+      minmax(10ch, auto)
     [main-end]
       minmax(0, 1fr)
     [wide-end]
