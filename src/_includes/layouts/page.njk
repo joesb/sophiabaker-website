@@ -21,14 +21,25 @@ scripts:
       <div class="padding-block modal-picture">
         {% figure "portfolio-item--figure" %}
           {% image item.image.path, item.image.alt, 'portfolio-item--image','portfolio-item--picture' %}
+          {% if item.caption | length %}
           <aside class="modal-picture-caption portfolio-item--caption">
           {% caption %}
-            <div class="caption-content">{{ item.caption.content }}</div>
-            {% if item.caption.credit %}
-            <div class="caption-credit">{{ item.caption.credit }}</div>
+            <div class="caption-item caption-title bold">{{ item.caption.title }}</div>
+            {% if item.caption.description %}
+            <div class="caption-item caption-description">{{ item.caption.description }}</div>
+            {% endif %}
+            {% if item.caption.media %}
+            <div class="caption-item caption-media"><span class="caption-label">Media:</span> {{ item.caption.media }}</div>
+            {% endif %}
+            {% if item.caption.date %}
+            <div class="caption-item caption-date"><span class="caption-label">Date:</span> {{ item.caption.date }}</div>
+            {% endif %}
+            {% if item.caption.reference %}
+            <div class="caption-item caption-reference"><span class="caption-label">Artist reference:</span> {{ item.caption.reference }}</div>
             {% endif %}
           {% endcaption %}
           </aside>
+          {% endif %}
         {% endfigure %}
       </div>
       <nav class="modal-click-nav">

@@ -6,14 +6,14 @@
   max-inline-size: unset;
 
   &:not(.lightbox-active) {
-    .modal-click--button,
-    .modal-click--button-info {
+    .modal-click,
+    .modal-click--info {
       display: none;
     }
   }
 
   &:hover {
-    .modal-click--button {
+    .modal-click {
       display: inline-block;
     }
   }
@@ -26,6 +26,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  display: inline-block;
 }
 
 .modal-click--button {
@@ -38,6 +39,15 @@
 .modal-click--button-info {
   position: relative;
   --button-mask-image: url("/static/images/modal-info.svg");
+  z-index: 999;
+}
+
+.modal-click--info {
+  position: relative;
+  z-index: 999;
+  display: inline-block;
+  height: var(--size-7);
+  width: var(--size-7);
 }
 
 .modal-click--button,
@@ -79,7 +89,8 @@
   background-color: var(--color-jet-black-lighter);
 
   .modal-click-nav {
-    width: 95vw;
+    width: 100vw;
+    padding: var(--size-2) var(--size-3);
     margin: auto;
     grid-area: control;
     position: relative;
@@ -116,7 +127,13 @@
 
 
   .modal-picture {
-    grid-area: "content";
+    grid-area: content;
+  }
+}
+
+.modal-hide-caption {
+  .modal-picture-caption {
+    display: none;
   }
 }
 
