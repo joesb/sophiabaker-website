@@ -1,4 +1,45 @@
+@use "../tools/respond-to" as rt;
+
 .header-main__inner {
   position: relative;
-  padding-inline: var(--size-5);
+  display: grid;
+  grid-template-columns:
+    [full-start]
+      minmax(5vw, auto)
+    [main-start]
+      minmax(auto, 36rem)
+    [main-end]
+      minmax(5vw, auto)
+    [full-end]
+  ;
+  grid-auto-flow: row;
+}
+
+.header-main__logo {
+  grid-column: main-start/main-end;
+}
+.header-main__nav {
+  grid-column: full-start/full-end;
+}
+
+.header-main__logo {
+  // padding-inline: var(--size-5);
+}
+
+@include rt.respond-to('medium') {
+  .header-main__inner {
+    grid-template-columns:
+      [full-start]
+        minmax(2vw, 1fr)
+      [main-start]
+        34rem
+      [main-end]
+        minmax(2vw, 1fr)
+      [full-end]
+    ;
+  }
+
+  .header-main__logo {
+    padding-inline: 0;
+  }
 }
