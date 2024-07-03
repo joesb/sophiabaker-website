@@ -26,7 +26,6 @@ jobs:
 
       - name: Install dependencies 
         run: |
-          yarn add sharp --ignore-engines
           yarn install --frozen-lockfile
       
       - name: Build site
