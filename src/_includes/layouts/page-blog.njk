@@ -1,0 +1,15 @@
+---
+layout: base.njk
+---
+{# Title bar #}
+<div class="content-canvas">
+  {% include "layouts/components/title-bar.njk" %}
+
+  <div class="blog-item--metadata">
+    {{ page.date | getMonthName }} {{ page.date | getFullYear }}
+  </div>
+</div>
+
+<div class="content-canvas">
+  {{ content | safe }}
+</div>

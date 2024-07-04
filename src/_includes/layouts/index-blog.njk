@@ -1,0 +1,62 @@
+---
+layout: base.njk
+---
+
+{# Title bar #}
+<div class="content-canvas">
+  {% include "layouts/components/title-bar.njk" %}
+</div>
+
+{# Main page content #}
+{% if content %}
+
+<div class="content-canvas"> 
+  <div class="index-content margin-block-end border-bottom border-bottom-2">
+    {{ content | markdown | safe }}
+  </div>
+</div>
+
+{% endif %}
+
+{# Blog list #}
+{% if pagination.data %}
+
+<div class="content-canvas">
+  <ul class="bare-list blog-list">
+    {% for item in items %}
+    <li class="blog-item">
+      <h2 class="blog-item--title"><a href="{{ item.url | url }}"{% activepath item.url, page.url %}>{{ item.data.title }}</a></h2>
+      {% if item.page.excerpt %}
+      <div class="blog-item--metadata">
+        {{ item.page.date | getMonthName }} {{ item.page.date | getFullYear }}
+      </div>
+      <div class="blog-item--excerpt">
+        {{ item.page.excerpt | markdown | safe }}
+      </div>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% if showPaginationNav !== false and pagination.pages|length > 1 %}
+
+    <nav class="pagination">
+      <ol class="border-top padding-top">
+        {% if page.url != pagination.href.first %}<li class="pagination-item first"><a href="{{ pagination.href.first }}"><span title="First">First</span></a></li>{% endif %}
+        {% if pagination.href.previous %}<li class="pagination-item previous"><a href="{{ pagination.href.previous }}"><span title="Previous">Previous</span></a></li>{% endif %}
+    {% for pageEntry in pagination.pages %}
+        {% if page.url == pagination.hrefs[ loop.index0 ] %}
+        <li class="pagination-item">p{{loop.index}} of {{ pagination.hrefs | length }}</li>
+        {% endif %}
+        {# <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} class="current" aria-current="page"{% endif %}>{{ loop.index }}</a></li> #}
+    {% endfor %}
+        {% if pagination.href.next %}<li class="pagination-item next"><a href="{{ pagination.href.next }}"><span title="Next">Next</span></a></li>{% endif %}
+        {% if page.url != pagination.href.last %}<li class="pagination-item last"><a href="{{ pagination.href.last }}"><span title="Last">Last</span></a></li>{% endif %}
+      </ol>
+    </nav>
+
+  {% endif %}
+
+</div>
+
+{% endif %}

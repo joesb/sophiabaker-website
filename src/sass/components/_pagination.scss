@@ -12,13 +12,15 @@
     align-items: center;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    max-inline-size: 35ch;
   }
 
   .pagination-item {
     position: relative;
     margin: var(--size-2);
     height: var(--size-4);
+    font-size: var(--font-size-0);
 
     span {
       @include mixins.hide-text;
@@ -34,6 +36,7 @@
         color: var(--color-text);
         z-index: 2;
         text-indent: 0;
+        font-size: var(--font-size-1);
       }
     }
 

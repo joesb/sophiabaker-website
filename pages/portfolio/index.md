@@ -7,7 +7,7 @@ eleventyNavigation:
   title: Portfolio
 pagination:
   data: collections.portfolioByOrder
-  size: 3
+  size: 11
   alias: items
 ---
 

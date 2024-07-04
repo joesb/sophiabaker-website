@@ -28,6 +28,13 @@ module.exports = function (eleventyConfig) {
     return minified.code;
   });
 
+  // Find an excerpt
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    // Optional, default is "---"
+    excerpt_separator: "<!-- excerpt -->",
+  });
+
   // Return active path attributes
   eleventyConfig.addShortcode('activepath', function (itemUrl, currentUrl, currentClass = "current", prefix = '') {
     if (itemUrl == '/' && itemUrl !== currentUrl) {
@@ -87,6 +94,35 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('portfolioByOrder', (collection) => {
     var nav = collection.getFilteredByTag('portfolio');
     return sortByOrder(nav);
+  });
+
+  // Sort portfolio pieces by date
+  eleventyConfig.addCollection('blog', (collection) => {
+    var nav = collection.getFilteredByGlob('pages/blog/*.md');
+    return sortByDate(nav).reverse();
+  });
+
+  // Get the full year number from a date
+  eleventyConfig.addFilter("getFullYear", function(date) {
+    return date.getFullYear();
+  });
+
+  // Get the zero-padded month number from a date
+  eleventyConfig.addFilter("getMonth", function(date) {
+    let month;
+    month = '0' + (date.getMonth());
+    return month.slice(-2);
+  });
+
+  eleventyConfig.addFilter("getMonthName", function(date) {
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    return months[date.getMonth()];
+  });
+
+  // Get the zero-padded month number from a date
+  eleventyConfig.addFilter("getDate", function(date) {
+    return date.getDate();
   });
 
   function sortByOrder(collection) {

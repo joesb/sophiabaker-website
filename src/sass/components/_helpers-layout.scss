@@ -1,0 +1,42 @@
+// Margin
+.margin-block {
+  margin-block: var(--size-7);
+}
+
+.margin-block-start {
+  margin-block-start: var(--size-7);
+}
+
+.margin-block-end {
+  margin-block-end: var(--size-7);
+}
+
+// Padding
+.padding-block {
+  padding-block: var(--size-7);
+}
+
+.margin-block-start {
+  padding-block-start: var(--size-7);
+}
+
+.margin-block-end {
+  padding-block-end: var(--size-7);
+}
+
+// Borders
+.border-top {
+  border-top: 1px solid var(--color-border);
+}
+
+.border-top-2 {
+  border-top-width: 2px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.border-bottom-2 {
+  border-bottom-width: 2px;
+}

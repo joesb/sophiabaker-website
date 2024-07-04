@@ -1,0 +1,14 @@
+.blog-list {
+  > * {
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--color-border);
+      padding-block-end: var(--size-3);
+      margin-block-end: var(--size-3);
+    }
+  }
+}
+
+.blog-item--metadata {
+  font-size: smaller;
+  font-style: italic;
+}

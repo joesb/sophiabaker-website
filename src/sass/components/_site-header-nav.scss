@@ -27,14 +27,13 @@
 
 .main-nav--list--item-link {
   &:hover {
-    background-color: var(--color-background-dark);
     color: var(--text-1);
+    text-decoration-line: underline;
   }
 
   &.current {
-    // background-color: var(--surface-4);
-    background-color: var(--color-background-darker);
-    font-weight: var.$base-font-weight-bold;
+    font-weight: var(--font-weight-bold);
+    text-decoration-line: underline;
   }
 }
 

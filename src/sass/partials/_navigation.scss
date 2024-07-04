@@ -1,5 +1,5 @@
 @use "../common/variables";
-@use "../tools/px-to-rem";
+@use "../tools/px-to-rem" as p2r;
 @use "../tools/respond-to";
 
 .main-nav,
@@ -20,9 +20,12 @@
   a {
     color: var(--text-1);
     font-weight: variables.$base-font-weight-medium;
-    text-decoration: none;
+    text-decoration-thickness: p2r.px-to-rem(2px);
+    text-underline-offset: p2r.px-to-rem(4px);
     display: block;
     padding: var(--size-1) var(--size-2);
     margin-inline: var(--size-2);
+    text-transform: uppercase;
+    font-size: var(--font-size-0);
   }
 }
