@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   
-  <title>Hello world | Sophia Baker </title>
+  <title>Three | Sophia Baker </title>
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/apple-touch-icon.png" type="image/png">
@@ -35,6 +35,12 @@
   <script>$(document).ready(function(){$("html").addClass("js"),$("button.header-main__menu").click(function(){$(".open-mobile").length?($(".header-main").removeClass("open-mobile"),$("button.header-main__menu").attr("aria-expanded","false")):($(".header-main").addClass("open-mobile"),$("button.header-main__menu").attr("aria-expanded","true"))})});</script>
 
   
+  
+    
+    
+    <script>function fsHandler(e){null==e.currentTarget.fullscreenElement&&$(".modal-click-parent").removeClass("lightbox-active modal-hide-caption")}function is_fullscreen(){return null!=document.fullscreenElement}$(document).ready(function(){$(".modal-click").on("click",function(e){e.preventDefault();e=$(this).parents(".modal-click-parent");e.hasClass("lightbox-active")?(e.removeClass("lightbox-active"),document.exitFullscreen()):(e.addClass("lightbox-active"),e.get(0).requestFullscreen())}),$(".modal-click--info").on("click",function(e){e.preventDefault(),$(this).parents(".modal-click-parent").toggleClass("modal-hide-caption")}),$(document).on("fullscreenchange",e=>{fsHandler(e)})});</script>
+  
+  
 
   
 
@@ -47,8 +53,9 @@
         <header role="banner" class="header-main" id="main-navigation">
 			<div class="header-main__inner">
 				<div class="header-main__logo">
-					
-					<h1 class="site-logo--title">Sophia Baker</h1>
+					<a href="/" class="site-logo">
+						<h1 class="site-logo--title">Sophia Baker</h1>
+					</a>
 					
 				</div>
 				<div class="header-main__nav">
@@ -59,7 +66,7 @@
     <ul class="main-nav--list">
     
       <li class="main-nav--list--item">
-        <a href="/portfolio/" class="main-nav--list--item-link">Portfolio</a>
+        <a href="/portfolio/" class="main-nav--list--item-link current">Portfolio</a>
       </li>
     
     
@@ -101,27 +108,154 @@
 			<div class="site-content page">
 				
 				
-
 <div class="content-canvas">
-  	<div class="page-title">
-		<div class="title-bar">
-	
-			<div class="container">
-				<h1 class="page-title__heading">Hello world</h1>
-			</div>
-		</div>
-	</div>
+  <p>Fanny pack four dollar toast jianbing authentic bodega boys truffaut pour-over, thundercats tonx kombucha blackbird spyplane hashtag mukbang PBR&amp;B slow-carb. Same hell of tousled synth.</p>
+<p>Typewriter PBR&amp;B quinoa tofu salvia fingerstache photo booth blackbird spyplane lomo pork belly kinfolk flannel marfa. Kitsch schlitz deep v, venmo kickstarter narwhal fashion axe vibecession.</p>
+
 </div>
 
 
+
+
 <div class="content-canvas">
-  <h2>Hello world</h2>
-<p>Lumbersexual selfies hammock williamsburg cliche +1 squid schlitz fixie.  Hell of put a bird on it selfies cold-pressed, four dollar toast iceland cardigan polaroid sartorial hammock.  Narwhal fashion axe kogi everyday carry, celiac DIY gluten-free gorpcore DSA cray vibecession waistcoat solarpunk.  Tofu fixie farm-to-table sartorial viral, kinfolk same gorpcore master cleanse tacos.  Meggings chia paleo, yr helvetica literally neutra thundercats.</p>
-<p>Viral kinfolk keytar slow-carb woke.  Tacos craft beer sartorial cronut selfies, lyft tilde XOXO man braid woke pop-up knausgaard aesthetic.  Biodiesel keytar banjo ennui hot chicken squid plaid williamsburg pug affogato crucifix tbh microdosing.  Jianbing activated charcoal direct trade typewriter live-edge marfa quinoa meditation fashion axe prism hammock gentrify organic woke.  Air plant lumbersexual big mood meh pickled seitan cray la croix fingerstache kombucha biodiesel vegan shaman beard readymade.  Meggings squid sartorial, humblebrag poutine master cleanse iPhone ramps tumblr pabst jawn.  Jawn glossier cred keytar.</p>
-<p>Typewriter crucifix authentic yuccie shaman.  Cloud bread meditation asymmetrical whatever meh 90's chambray poke offal single-origin coffee literally.  Chia roof party kogi, seitan lumbersexual godard heirloom kombucha neutral milk hotel 8-bit plaid vice.  Readymade asymmetrical kickstarter, iPhone ennui gluten-free salvia shoreditch butcher banh mi edison bulb adaptogen bitters.</p>
 
+  <hr>
+
+  <ul class="portfolio-list content-canvas-item-wide bare-list" id="portfolio-lightbox">
+  
+    
+    <li class="modal-click-parent portfolio-list-item">
+      <div class="padding-block modal-picture">
+        <figure class="figure portfolio-item--figure">
+          <picture class="portfolio-item--picture">
+			  <source type="image/webp" srcset="/static/img/-XhxLiPC77-300.webp 300w, /static/img/-XhxLiPC77-600.webp 600w, /static/img/-XhxLiPC77-1000.webp 1000w, /static/img/-XhxLiPC77-1980.webp 1980w" sizes="(min-width: 30em) 50vw, 100vw">
+  <source type="image/jpeg" srcset="/static/img/-XhxLiPC77-300.jpeg 300w, /static/img/-XhxLiPC77-600.jpeg 600w, /static/img/-XhxLiPC77-1000.jpeg 1000w, /static/img/-XhxLiPC77-1980.jpeg 1980w" sizes="(min-width: 30em) 50vw, 100vw">
+				<img
+					src="/static/img/-XhxLiPC77-300.jpeg"
+					width="1980"
+					height="1980"
+          class="portfolio-item--image image-obj-contain image-max-height-100vh"
+					alt="Gray Concrete Structure"
+					loading="lazy"
+					decoding="async">
+			</picture>
+          
+        </figure>
+      </div>
+      <nav class="modal-click-nav">
+        <a href="#" class="modal-click">
+          <button type="button" class="modal-click--button">
+            <span class="modal-click--button-text hide-text" aria-hidden="true">view full screen</span>
+          </button>
+        </a>
+        <a href="#" class="modal-click--info">
+          <button type="button" class="modal-click--button-info">
+            <span class="modal-click--button-text hide-text" aria-hidden="true">Toggle caption</span>
+          </button>
+        </a>
+      </nav>
+    </li>
+  
+    
+    <li class="modal-click-parent portfolio-list-item portfolio-item-has-caption">
+      <div class="padding-block modal-picture">
+        <figure class="figure portfolio-item--figure">
+          <picture class="portfolio-item--picture">
+			  <source type="image/webp" srcset="/static/img/7YmxQp6S_P-300.webp 300w, /static/img/7YmxQp6S_P-600.webp 600w, /static/img/7YmxQp6S_P-1000.webp 1000w, /static/img/7YmxQp6S_P-1980.webp 1980w" sizes="(min-width: 30em) 50vw, 100vw">
+  <source type="image/jpeg" srcset="/static/img/7YmxQp6S_P-300.jpeg 300w, /static/img/7YmxQp6S_P-600.jpeg 600w, /static/img/7YmxQp6S_P-1000.jpeg 1000w, /static/img/7YmxQp6S_P-1980.jpeg 1980w" sizes="(min-width: 30em) 50vw, 100vw">
+				<img
+					src="/static/img/7YmxQp6S_P-300.jpeg"
+					width="1980"
+					height="1980"
+          class="portfolio-item--image image-obj-contain image-max-height-100vh"
+					alt="White and Yellow Dome Building Interior"
+					loading="lazy"
+					decoding="async">
+			</picture>
+          
+          <aside class="modal-picture-caption portfolio-item--caption">
+          <figcaption class="figcaption ">
+            <div class="caption-item caption-title bold">White and Yellow Dome Building Interior</div>
+            
+            <div class="caption-item caption-description">Kombucha beard man bun, fam gluten-free fashion axe brunch cold-pressed keffiyeh vinyl marfa disrupt cronut.</div>
+            
+            
+            <div class="caption-item caption-media"><span class="caption-label">Media:</span> Poke adaptogen vinyl.</div>
+            
+            
+            <div class="caption-item caption-date"><span class="caption-label">Date:</span> July, 2024</div>
+            
+            
+            <div class="caption-item caption-reference"><span class="caption-label">Artist reference:</span> Roy Lichtenstein</div>
+            
+          </figcaption>
+          </aside>
+          
+        </figure>
+      </div>
+      <nav class="modal-click-nav">
+        <a href="#" class="modal-click">
+          <button type="button" class="modal-click--button">
+            <span class="modal-click--button-text hide-text" aria-hidden="true">view full screen</span>
+          </button>
+        </a>
+        <a href="#" class="modal-click--info">
+          <button type="button" class="modal-click--button-info">
+            <span class="modal-click--button-text hide-text" aria-hidden="true">Toggle caption</span>
+          </button>
+        </a>
+      </nav>
+    </li>
+  
+    
+    <li class="modal-click-parent portfolio-list-item portfolio-item-has-caption">
+      <div class="padding-block modal-picture">
+        <figure class="figure portfolio-item--figure">
+          <picture class="portfolio-item--picture">
+			  <source type="image/webp" srcset="/static/img/jM1wQl-I20-300.webp 300w, /static/img/jM1wQl-I20-600.webp 600w, /static/img/jM1wQl-I20-1000.webp 1000w, /static/img/jM1wQl-I20-1980.webp 1980w" sizes="(min-width: 30em) 50vw, 100vw">
+  <source type="image/jpeg" srcset="/static/img/jM1wQl-I20-300.jpeg 300w, /static/img/jM1wQl-I20-600.jpeg 600w, /static/img/jM1wQl-I20-1000.jpeg 1000w, /static/img/jM1wQl-I20-1980.jpeg 1980w" sizes="(min-width: 30em) 50vw, 100vw">
+				<img
+					src="/static/img/jM1wQl-I20-300.jpeg"
+					width="1980"
+					height="1320"
+          class="portfolio-item--image image-obj-contain image-max-height-100vh"
+					alt="Photo of Glass Dome Building"
+					loading="lazy"
+					decoding="async">
+			</picture>
+          
+          <aside class="modal-picture-caption portfolio-item--caption">
+          <figcaption class="figcaption ">
+            <div class="caption-item caption-title bold">Photo of Glass Dome Building</div>
+            
+            <div class="caption-item caption-description">Hashtag blackbird spyplane poutine selvage Brooklyn XOXO artisan big mood poke.</div>
+            
+            
+            
+            <div class="caption-item caption-date"><span class="caption-label">Date:</span> Nov, 2016</div>
+            
+            
+          </figcaption>
+          </aside>
+          
+        </figure>
+      </div>
+      <nav class="modal-click-nav">
+        <a href="#" class="modal-click">
+          <button type="button" class="modal-click--button">
+            <span class="modal-click--button-text hide-text" aria-hidden="true">view full screen</span>
+          </button>
+        </a>
+        <a href="#" class="modal-click--info">
+          <button type="button" class="modal-click--button-info">
+            <span class="modal-click--button-text hide-text" aria-hidden="true">Toggle caption</span>
+          </button>
+        </a>
+      </nav>
+    </li>
+  
+  </ul>
 </div>
-
 
 			</div>
 			
@@ -136,7 +270,7 @@
 			<ul class="footer-main__nav__list">
 			
 			
-				<li  class="odd">
+				<li current class="odd">
 					<a href="/portfolio/">Portfolio</a>
 				</li>
 			
