@@ -142,6 +142,7 @@
     grid-auto-flow: column;
     grid-template-areas: "content control";
     grid-template-columns: auto var(--size-9);
+    grid-template-rows: unset;
 
     .modal-click-nav {
       width: 100%;

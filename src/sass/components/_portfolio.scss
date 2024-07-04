@@ -17,11 +17,16 @@
 .portfolio-item--figure {
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: 4fr 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-areas:
     "picture"
     "caption"
   ;
+}
+.lightbox-active {
+  .portfolio-item--figure {
+    grid-template-rows: 4fr 1fr;
+  }
 }
 
 .modal-hide-caption {
@@ -63,7 +68,6 @@
 }
 
 .lightbox-active {
-
   .portfolio-item--figure {
     height: 100vh;
   }
@@ -80,6 +84,12 @@
     grid-template-columns: minmax(60%, 4fr) minmax(0, 1fr);
     grid-template-areas: "picture caption";
     align-content: center;
+  }
+  
+  .lightbox-active {
+    .portfolio-item--figure {
+      grid-template-rows: unset;
+    }
   }
 
   .modal-hide-caption {

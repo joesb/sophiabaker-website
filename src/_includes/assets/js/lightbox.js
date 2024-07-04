@@ -43,7 +43,7 @@ $(document).ready(function () {
 
 function fsHandler(event) {
   if (event.currentTarget.fullscreenElement == null) {
-    $('.modal-click-parent').removeClass('lightbox-active');
+    $('.modal-click-parent').removeClass('lightbox-active modal-hide-caption');
   }
 }
 
