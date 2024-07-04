@@ -81,6 +81,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('static/');
   eleventyConfig.addWatchTarget('./src/sass/');
   eleventyConfig.addPassthroughCopy('robots.txt');
+  eleventyConfig.addPassthroughCopy('CNAME');
 
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
