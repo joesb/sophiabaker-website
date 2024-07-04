@@ -1,0 +1,62 @@
+@use "../tools/respond-to" as rt;
+
+.footer-main__container {
+  margin-block-start: var(--size-8);
+  padding-block: var(--size-8);
+  border-top-color: var(--color-ivory);
+  border-top-width: var(--border-size-2);
+  border-top-style: solid;
+
+  display: grid;
+  grid-template-columns:
+    [full-start]
+      minmax(5vw, auto)
+    [main-start]
+      minmax(auto, 36rem)
+    [main-end]
+      minmax(5vw, auto)
+    [full-end]
+  ;
+  grid-auto-flow: row;
+  gap: 1.5em;
+
+  > * {
+    grid-column: main-start/main-end;
+  }
+}
+
+.footer-main__nav__list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  >* {
+    font-size: var(--font-size-0);
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.footer-main__nav {
+  text-transform: uppercase;
+
+  a {
+    &:hover {
+      text-decoration: underline;
+      color: var(--color-jet-black-lighter);
+    }
+  }
+}
+
+@include rt.respond-to('medium') {
+  .footer-main__container {
+    grid-auto-flow: column;
+  }
+
+  .footer-main__nav {
+    a {
+      padding-inline: 0;
+      margin-inline: 0;
+    }
+  }
+}
