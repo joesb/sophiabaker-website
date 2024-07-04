@@ -22,6 +22,13 @@
     "picture"
     "caption"
   ;
+
+  &:not(:has(.portfolio-item--caption)) {
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "picture"
+    ;
+  }
 }
 .lightbox-active {
   .portfolio-item--figure {
@@ -41,6 +48,7 @@
 
 .portfolio-item--picture {
   grid-area: picture;
+  max-block-size: 100%;
 }
 
 .portfolio-item--caption {
@@ -84,8 +92,13 @@
     grid-template-columns: minmax(60%, 4fr) minmax(0, 1fr);
     grid-template-areas: "picture caption";
     align-content: center;
+
+    &:not(:has(.portfolio-item--caption)) {
+      grid-template-columns: auto;
+      grid-template-areas: "picture";
+    }
   }
-  
+
   .lightbox-active {
     .portfolio-item--figure {
       grid-template-rows: unset;

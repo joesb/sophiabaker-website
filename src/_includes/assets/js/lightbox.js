@@ -31,7 +31,6 @@ $(document).ready(function () {
 
   $('.modal-click--info').on('click', function(e) {
     e.preventDefault();
-    console.log(e);
     $(this).parents('.modal-click-parent').toggleClass('modal-hide-caption');
   });
 

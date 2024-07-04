@@ -88,7 +88,7 @@
   align-items: flex-end;
   color: var(--surface-2);
   border-color: color.adjust(variables.$color-jet-black, $lightness: 50%);
-  min-height: var(--size-13);
+  min-height: var(--size-12);
 
   a {
     color: var(--surface-2);
@@ -113,7 +113,7 @@
   }
 
   &.index-list__item--picture {
-    min-height: var(--size-12);
+    min-height: var(--size-13);
   }
 }
 

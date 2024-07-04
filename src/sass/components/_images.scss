@@ -40,6 +40,20 @@
   object-position: center center;
 }
 
+.image-obj-contain {
+  block-size: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.image-max-height-100 {
+  max-height: 100%;
+}
+
+.image-max-height-100vh {
+  max-height: 100vh;
+}
+
 .image-obj-pos-top {
   object-position: center top;
 }

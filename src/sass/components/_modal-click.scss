@@ -118,6 +118,13 @@
     grid-area: info;
   }
 
+
+  &:not(.portfolio-item-has-caption) {
+    .modal-click--info {
+      display: none;
+    }
+  }
+
   .modal-click--button {
     position: relative;
     top: 0;

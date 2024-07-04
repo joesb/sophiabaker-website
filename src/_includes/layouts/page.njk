@@ -17,11 +17,12 @@ scripts:
 
   <ul class="portfolio-list content-canvas-item-wide bare-list" id="portfolio-lightbox">
   {% for item in portfolio %}
-    <li class="modal-click-parent portfolio-list-item">
+    {% set hasCaption =  true if item.caption else false %}
+    <li class="modal-click-parent portfolio-list-item{% if hasCaption %} portfolio-item-has-caption{% endif %}">
       <div class="padding-block modal-picture">
         {% figure "portfolio-item--figure" %}
-          {% image item.image.path, item.image.alt, 'portfolio-item--image','portfolio-item--picture' %}
-          {% if item.caption | length %}
+          {% image item.image.path, item.image.alt, 'portfolio-item--image image-obj-contain image-max-height-100vh','portfolio-item--picture' %}
+          {% if hasCaption %}
           <aside class="modal-picture-caption portfolio-item--caption">
           {% caption %}
             <div class="caption-item caption-title bold">{{ item.caption.title }}</div>
