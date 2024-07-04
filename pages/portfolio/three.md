@@ -3,6 +3,7 @@ layout: page.njk
 title: Three
 tags:
   - portfolio
+order: 3
 portfolio:
   - 
     image:

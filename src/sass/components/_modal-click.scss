@@ -78,6 +78,12 @@
   }
 }
 
+.modal-click--button-info {
+  &:hover {
+    background-color: var(--color-midnight-blue-dark);
+  }
+}
+
 .lightbox-active {
   display: grid;
   grid-auto-flow: row;
@@ -141,6 +147,14 @@
 .modal-hide-caption {
   .modal-picture-caption {
     display: none;
+  }
+
+  .modal-click--button-info {
+    background-color: var(--color-jet-black-lighter);
+
+    &:hover {
+      background-color: var(--color-midnight-blue);
+    }
   }
 }
 

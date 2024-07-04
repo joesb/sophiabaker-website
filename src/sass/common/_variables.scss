@@ -20,6 +20,7 @@ $color-jet-black-light: color.adjust($color-jet-black, $lightness: 5%);
 $color-jet-black-lighter: color.adjust($color-jet-black, $lightness: 15%);
 $color-ivory-dark: color.adjust($color-ivory, $lightness: -10%);
 $color-ivory-darker: color.adjust($color-ivory, $lightness: -15%);
+$color-midnight-blue-dark: color.adjust($color-midnight-blue, $lightness: -10%);
 
 // Custom media queries
 $break-very-small: 22.5rem; // >= 360px @ 16px

@@ -77,6 +77,33 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedShortcode("caption", function(caption, classes = '') {
     return `<figcaption class="figcaption ${classes}">` + caption + '</figcaption>'});
 
+  // Sort portfolio pieces by date
+  eleventyConfig.addCollection('portfolio', (collection) => {
+    var nav = collection.getFilteredByTag('portfolio');
+    return sortByDate(nav).reverse();
+  });
+
+  // Sort portfolio pieces by order
+  eleventyConfig.addCollection('portfolioByOrder', (collection) => {
+    var nav = collection.getFilteredByTag('portfolio');
+    return sortByOrder(nav);
+  });
+
+  function sortByOrder(collection) {
+    return collection.sort((a, b) => {
+      if (a.data.order < b.data.order) return -1;
+      else if (a.data.order > b.data.order) return 1;
+      else return 0;
+    });
+  }
+
+  function sortByDate(collection) {
+    return collection.sort((a, b) => {
+      if (a.data.date < b.data.date) return -1;
+      else if (a.data.date > b.data.date) return 1;
+      else return 0;
+    });
+  }
 
   eleventyConfig.addPassthroughCopy('static/');
   eleventyConfig.addWatchTarget('./src/sass/');

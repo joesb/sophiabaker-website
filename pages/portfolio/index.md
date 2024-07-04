@@ -6,7 +6,7 @@ eleventyNavigation:
   key: Portfolio
   title: Portfolio
 pagination:
-  data: collections.portfolio
+  data: collections.portfolioByOrder
   size: 3
   alias: items
 ---
