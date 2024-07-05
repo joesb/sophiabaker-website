@@ -18,8 +18,8 @@ scripts:
   <ul class="portfolio-list content-canvas-item-wide bare-list" id="portfolio-lightbox">
   {% for item in portfolio %}
     {% set hasCaption =  true if item.caption else false %}
-    <li class="modal-click-parent portfolio-list-item{% if hasCaption %} portfolio-item-has-caption{% endif %}">
-      <div class="padding-block modal-picture">
+    <li class="modal-click-parent portfolio-list-item{% if hasCaption %} portfolio-item-has-caption{% endif %}{% if item.addBorder %} portfolio-list-item--border{% endif %}">
+      <div class="modal-picture">
         {% figure "portfolio-item--figure" %}
           {% image item.image.path, item.image.alt, 'portfolio-item--image image-obj-contain image-max-height-100vh','portfolio-item--picture' %}
           {% if hasCaption %}

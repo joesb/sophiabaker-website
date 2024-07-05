@@ -1,3 +1,11 @@
 {
-  "title": "Sophia Baker"
+  "title": "Sophia Baker",
+  "social_site": [
+    {
+      "name": "Instagram",
+      "machine_name": "instagram",
+      "url": "https://www.instagram.com/sophias._galleria/",
+      "alias": "@sophias._galleria"
+    }
+  ]
 }
