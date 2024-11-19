@@ -9,6 +9,7 @@ portfolio:
     image:
       path: "https://images.pexels.com/photos/19400189/pexels-photo-19400189/free-photo-of-people-in-a-desert.jpeg"
       alt: "People in a Desert"
+      widths: [300, 600, 1000, 1980]
     caption:
       title: "People in a Desert"
       description: "Brunch woke distillery pop-up, sriracha literally selvage williamsburg disrupt mixtape. Tumblr af church-key kitsch jean shorts kogi."
@@ -19,12 +20,14 @@ portfolio:
     image:
       path: "https://images.pexels.com/photos/16222758/pexels-photo-16222758/free-photo-of-trees-growing-in-the-forest.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       alt: "Trees growing in the forest"
+      widths: [300, 600, 1000, 1980]
     caption:
       title: "Trees growing in the forest"
   - 
     image:
       path: "https://images.pexels.com/photos/157553/pexels-photo-157553.jpeg"
       alt: "Water Drops in Time Lapse Photography"
+      widths: [300, 600, 1000, 1980]
     caption:
       title: "Water Drops in Time Lapse Photography"
 
@@ -32,6 +35,7 @@ portfolio:
     image:
       path: "https://images.pexels.com/photos/1103969/pexels-photo-1103969.jpeg"
       alt: Time Lapse Photography during Nighttime
+      widths: [300, 600, 1000, 1980]
     caption:
       title: "Time Lapse Photography during Nighttime"
 ---

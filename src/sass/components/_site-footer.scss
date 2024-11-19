@@ -101,49 +101,49 @@
 
   &.email {
     &::after {
-      mask-image: url("/static/images/icons/email.svg");
+      mask-image: url("/public/images/icons/email.svg");
     }
   }
 
   &.twitter {
     &::after {
-      mask-image: url("/static/images/icons/twitter.svg");
+      mask-image: url("/public/images/icons/twitter.svg");
     }
   }
 
   &.mastodon {
     &::after {
-      mask-image: url("/static/images/icons/mastodon.svg");
+      mask-image: url("/public/images/icons/mastodon.svg");
     }
   }
 
   &.instagram {
     &::after {
-      mask-image: url("/static/images/icons/instagram.svg");
+      mask-image: url("/public/images/icons/instagram.svg");
     }
   }
 
   &.facebook {
     &::after {
-      mask-image: url("/static/images/icons/facebook.svg");
+      mask-image: url("/public/images/icons/facebook.svg");
     }
   }
 
   &.youtube {
     &::after {
-      mask-image: url("/static/images/icons/youtube.svg");
+      mask-image: url("/public/images/icons/youtube.svg");
     }
   }
 
   &.soundcloud {
     &::after {
-      mask-image: url("/static/images/icons/soundcloud.svg");
+      mask-image: url("/public/images/icons/soundcloud.svg");
     }
   }
 
   &.medium {
     &::after {
-      mask-image: url("/static/images/icons/medium.svg");
+      mask-image: url("/public/images/icons/medium.svg");
     }
   }
 }

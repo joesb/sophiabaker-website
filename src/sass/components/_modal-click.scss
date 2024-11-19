@@ -33,12 +33,12 @@
   position: absolute;
   top: var(--size-1);
   right: var(--size-1);
-  --button-mask-image: url("/static/images/modal-button.svg");
+  --button-mask-image: url("/public/images/modal-button.svg");
 }
 
 .modal-click--button-info {
   position: relative;
-  --button-mask-image: url("/static/images/modal-info.svg");
+  --button-mask-image: url("/public/images/modal-info.svg");
   z-index: 999;
 }
 
@@ -135,7 +135,7 @@
     position: relative;
     top: 0;
     right: 0;
-    --button-mask-image: url("/static/images/modal-close.svg");
+    --button-mask-image: url("/public/images/modal-close.svg");
   }
 
 

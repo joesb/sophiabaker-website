@@ -9,10 +9,12 @@ portfolio:
     image:
       path: "https://images.pexels.com/photos/2642692/pexels-photo-2642692.jpeg"
       alt: "Gray Concrete Structure"
+      widths: [300, 600, 1000, 1980]
   -
     image:
       path: "https://images.pexels.com/photos/2076690/pexels-photo-2076690.jpeg"
       alt: "White and Yellow Dome Building Interior"
+      widths: [300, 600, 1000, 1980]
     caption:
       title: "White and Yellow Dome Building Interior"
       description: "Kombucha beard man bun, fam gluten-free fashion axe brunch cold-pressed keffiyeh vinyl marfa disrupt cronut."
@@ -23,6 +25,7 @@ portfolio:
     image:
       path: "https://images.pexels.com/photos/7474932/pexels-photo-7474932.jpeg"
       alt: "Photo of Glass Dome Building"
+      widths: [300, 600, 1000, 1980]
     caption:
       title: "Photo of Glass Dome Building"
       description: "Hashtag blackbird spyplane poutine selvage Brooklyn XOXO artisan big mood poke."

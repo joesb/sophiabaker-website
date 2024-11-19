@@ -1,11 +1,16 @@
 ---
 layout: base.njk
+image:
+  widths: [300, 600, 1200]
+  widthsSmall: [300, 600]
 ---
 
 {# Title bar #}
+{% if showTitle != false and primary != true %}
 <div class="content-canvas">
   {% include "layouts/components/title-bar.njk" %}
 </div>
+{% endif %}
 
 {# Main page content #}
 <div class="content-canvas">
@@ -37,7 +42,7 @@ layout: base.njk
 
           <a href="{{ item.url | url }}"{% activepath item.url, page.url %} class="faux-block-link"><span class="hide-text" aria-hidden="true">{{ item.data.title }}</span></a>
           {% if image.path %}
-            {% image image.path, image.alt, "image-obj-cover", "index-list__item__picture" %}
+            {% image image.path, image.alt, "image-obj-cover", image.widths, "index-list__item__picture" %}
           {% endif %}
       </li>
 

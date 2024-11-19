@@ -1,21 +1,31 @@
-const CleanCSS = require('clean-css');
-const UglifyJS = require('uglify-js');
-const autoprefixer = require('autoprefixer');
-const postCSS = require('postcss');
-const postCSSDC = require('postcss-discard-comments');
-const markdownIt = require("markdown-it");
-const markdownItAttrs = require('markdown-it-attrs');
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const Image = require("@11ty/eleventy-img");
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import CleanCSS from "clean-css";
+import postCSS from "postcss";
+import autoprefixer from "autoprefixer";
+import UglifyJS from "uglify-js";
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import Image from "@11ty/eleventy-img";
+import { DateTime } from "luxon";
+import markdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
+import markdownItAttrs from "markdown-it-attrs";
+import markdownIt11tyImage from "markdown-it-eleventy-img";
+import { eleventyImageOnRequestDuringServePlugin } from "@11ty/eleventy-img";
+import { inspect } from "util";
 
-module.exports = function (eleventyConfig) {
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
+export default async function(eleventyConfig) {
   // 11ty plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(pluginRss);
+
+  // Extra filters
+  eleventyConfig.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
 
   // Minify CSS
   eleventyConfig.addFilter('cssmin', function (code) {
-    css = new CleanCSS({}).minify(code).styles;
-    return postCSS([ autoprefixer, postCSSDC({removeAll: true}) ]).process(css).css;
+    var css = new CleanCSS({}).minify(code).styles;
+    return postCSS([ autoprefixer ]).process(css).css;
   });
 
   // Minify JS
@@ -29,11 +39,17 @@ module.exports = function (eleventyConfig) {
   });
 
   // Find an excerpt
-  eleventyConfig.setFrontMatterParsingOptions({
-    excerpt: true,
-    // Optional, default is "---"
-    excerpt_separator: "<!-- excerpt -->",
-  });
+  // eleventyConfig.setFrontMatterParsingOptions({
+  //   excerpt: true,
+  //   // Optional, default is "---"
+  //   excerpt_separator: "<!-- excerpt -->",
+  // });
+
+  // Readable Date filter
+  eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
+		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
+		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");
+	});
 
   // Return active path attributes
   eleventyConfig.addShortcode('activepath', function (itemUrl, currentUrl, currentClass = "current", prefix = '') {
@@ -47,42 +63,41 @@ module.exports = function (eleventyConfig) {
   });
 
   // Return responsive images
-  eleventyConfig.addShortcode("image", async function(src, alt, cls, pictureCls = "", sizes = "(min-width: 30em) 50vw, 100vw", widths = [300, 600, 1000, 1980]) {
-		if(alt === undefined) {
-			// You bet we throw an error on missing alt (alt="" works okay)
-			throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
-		}
-
+  eleventyConfig.addShortcode("image", async function (src, alt, cls, widths = [300, 600], sizes = "100vh", picCls = "") {
 		let metadata = await Image(src, {
-			widths: widths,
-			formats: ['webp', 'jpeg'],
-      urlPath: "/static/img/",
-      outputDir: "./static/img/"
+			widths,
+			formats: ["webp", "jpeg"],
+      urlPath: "/public/img/",
+      outputDir: "./content/public/img/"
 		});
 
-		let lowsrc = metadata.jpeg[0];
-		let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+		let imageAttributes = {
+      class: cls,
+			alt,
+			sizes,
+			loading: "lazy",
+			decoding: "async",
+		};
 
-		return `<picture class="${pictureCls}">
-			${Object.values(metadata).map(imageFormat => {
-				return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
-			}).join("\n")}
-				<img
-					src="${lowsrc.url}"
-					width="${highsrc.width}"
-					height="${highsrc.height}"
-          class="${cls}"
-					alt="${alt}"
-					loading="lazy"
-					decoding="async">
-			</picture>`;
+    let options = {
+      pictureAttributes: {
+        class: picCls
+      }
+    }
+
+		// You bet we throw an error on a missing alt (alt="" works okay)
+		return Image.generateHTML(metadata, imageAttributes, options);
 	});
 
-  eleventyConfig.addPairedShortcode("figure", function(content, classes = '') {
-    return `<figure class="figure ${classes}">` + content +'</figure>'});
+  // Add the dev server middleware manually
+  eleventyConfig.addPlugin(eleventyImageOnRequestDuringServePlugin);
 
-  eleventyConfig.addPairedShortcode("caption", function(caption, classes = '') {
-    return `<figcaption class="figcaption ${classes}">` + caption + '</figcaption>'});
+  // Figure markup, as a paired shortcode
+  eleventyConfig.addPairedShortcode("figure", function(content, caption, classes) {
+    if (caption) {
+      caption = '<figcaption>' + caption + '</figcaption>';
+    }
+    return '<figure class="' + classes +'">' + content + caption +'</figure>'});
 
   // Sort portfolio pieces by date
   eleventyConfig.addCollection('portfolio', (collection) => {
@@ -98,7 +113,7 @@ module.exports = function (eleventyConfig) {
 
   // Sort portfolio pieces by date
   eleventyConfig.addCollection('blog', (collection) => {
-    var nav = collection.getFilteredByGlob('pages/blog/*.md');
+    var nav = collection.getFilteredByGlob('content/blog/*.md');
     return sortByDate(nav).reverse();
   });
 
@@ -151,15 +166,31 @@ module.exports = function (eleventyConfig) {
     html: true,
     breaks: true,
     linkify: true
-  }).use(markdownItAttrs);
+  }).use(markdownItAnchor, {
+    permalink: markdownItAnchor.permalink.ariaHidden({
+      placement: "after",
+      class: "direct-link do-not-display",
+      symbol: "#",
+      level: [1,2,3,4],
+    }),
+    slugify: eleventyConfig.getFilter("slug")
+  }).use(markdownItAttrs).use(markdownIt11tyImage);
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   eleventyConfig.addFilter("markdown", (content) => {
     return markdownLibrary.render(content);
   });
 
-  return {
-    templateFormats: ['md', 'njk', 'html', 'liquid'],
+  eleventyConfig.addPassthroughCopy('content/public/');
+};
+
+export const config = {
+    templateFormats: [
+      'md',
+      'njk',
+      'html',
+      'liquid'
+    ],
 
     // If your site lives in a different subdirectory, change this.
     // Leading or trailing slashes are all normalized away, so don’t worry about it.
@@ -172,11 +203,10 @@ module.exports = function (eleventyConfig) {
     dataTemplateEngine: 'njk',
     passthroughFileCopy: true,
     dir: {
-      input: 'pages',
+      input: 'content',
       includes: '../src/_includes',
       layouts: '../src/_includes/layouts',
       data: '../src/_data',
       output: '_site',
-    },
-  };
-}
+    }
+};

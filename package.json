@@ -2,8 +2,12 @@
   "name": "sophiabaker.co.uk",
   "version": "1.0.0",
   "repository": "git@github.com:joesb/sophiabaker-website.git",
+  "type": "module",
   "author": "Joe Baker <joesbaker@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "build": "(yarn build:dryrun) && npx @11ty/eleventy",
     "build:dryrun": "(yarn sass:build) && (npx @11ty/eleventy --dryrun)",
@@ -15,23 +19,27 @@
     "sass:dev": "sass --watch --update --style=expanded --no-source-map src/sass/:src/_includes/assets/css/"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^5.0.0",
     "@11ty/eleventy-navigation": "^0.3.5",
-    "autoprefixer": "^10.4.19",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "autoprefixer": "^10.4.20",
     "clean-css": "^5.3.3",
-    "dotenv": "^16.4.5",
+    "html-minifier": "^4.0.0",
+    "luxon": "^3.5.0",
     "markdown-it": "^14.1.0",
-    "markdown-it-attrs": "^4.1.6",
-    "postcss": "^8.4.38",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-attrs": "^4.2.0",
+    "markdown-it-eleventy-img": "^0.10.2",
+    "postcss": "^8.4.47",
     "postcss-cli": "^11.0.0",
-    "postcss-discard-comments": "^7.0.1",
-    "rimraf": "^5.0.7",
-    "sass": "^1.77.6",
+    "rimraf": "^6.0.1",
+    "sass": "^1.80.6",
     "sass-autoprefixer": "^1.0.1",
-    "uglify-js": "^3.18.0"
-  },
-  "dependencies": {
-    "sharp": "^0.33.4"
+    "stylelint": "^16.10.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-prettier": "^5.0.2",
+    "stylelint-scss": "^6.8.1"
   }
 }

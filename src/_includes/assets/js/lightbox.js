@@ -12,11 +12,17 @@ $(document).ready(function () {
     e.preventDefault();
     let fig = $(this).parents('.modal-click-parent');
     if (fig.hasClass('lightbox-active')) {
-      fig.removeClass('lightbox-active');
+      fig.removeClass(function() {
+        $('body').removeClass('has-lightbox');
+        return 'lightbox-active';
+      });
       document.exitFullscreen();
     }
     else {
-      fig.addClass('lightbox-active');
+      fig.addClass(function() {
+        $('body').addClass('has-lightbox');
+        return 'lightbox-active';
+      });
       fig.get(0).requestFullscreen();
     }
     // if (fig.get(0).fullscreenElement) {

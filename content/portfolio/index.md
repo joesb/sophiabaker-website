@@ -1,7 +1,6 @@
 ---
 layout: index.njk
 title: My Portfolio
-navKey: true
 eleventyNavigation:
   key: Portfolio
   title: Portfolio

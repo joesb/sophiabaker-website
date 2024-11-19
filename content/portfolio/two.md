@@ -9,10 +9,12 @@ portfolio:
     image:
       path: "https://images.pexels.com/photos/2336840/pexels-photo-2336840.jpeg"
       alt: "Woman opening her mouth"
+      widths: [300, 600, 1000, 1980]
   -
     image:
       path: "https://images.pexels.com/photos/23515337/pexels-photo-23515337/free-photo-of-a-man-standing-next-to-a-motorcycle.jpeg"
       alt: "A man standing next to a motorcycle"
+      widths: [300, 600, 1000, 1980]
     caption:
       title: "A man standing next to a motorcycle"
       description: "Kombucha beard man bun, fam gluten-free fashion axe brunch cold-pressed keffiyeh vinyl marfa disrupt cronut."
@@ -23,6 +25,7 @@ portfolio:
     image:
       path: "https://images.pexels.com/photos/2224424/pexels-photo-2224424.jpeg"
       alt: "Chicago, IL, United States"
+      widths: [300, 600, 1000, 1980]
     caption:
       title: "Chicago, IL, United States"
       description: "Hashtag blackbird spyplane poutine selvage Brooklyn XOXO artisan big mood poke."
