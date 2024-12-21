@@ -6,7 +6,9 @@ layout: base.njk
   {% include "layouts/components/title-bar.njk" %}
 
   <div class="blog-item--metadata">
-    {{ page.date | getMonthName }} {{ page.date | getFullYear }}
+    <time class="item-date" datetime="{{ page.date | readableDate("yyyy-LL-dd") }}">{{ page.date | readableDate("d LLLL, yyyy") }}</time>
+    <span class="divider"></span>
+    <span class="item-reading-time">{{ content | timeToRead }} read</span>
   </div>
 </div>
 
