@@ -26,10 +26,12 @@ layout: base.njk
     {% for item in items %}
     <li class="blog-item">
       <h2 class="blog-item--title"><a href="{{ item.url | url }}"{% activepath item.url, page.url %}>{{ item.data.title }}</a></h2>
-      {% if item.page.excerpt %}
       <div class="blog-item--metadata">
-        {{ item.page.date | getMonthName }} {{ item.page.date | getFullYear }}
+        <time class="item-date" datetime="{{ item.date | readableDate("yyyy-LL-dd") }}">{{ item.date | readableDate("d LLLL, yyyy") }}</time>
+        <span class="divider"></span>
+        <span class="item-reading-time">{{ item.content | timeToRead }} read</span>
       </div>
+      {% if item.page.excerpt %}
       <div class="blog-item--excerpt">
         {{ item.page.excerpt | markdown | safe }}
       </div>

@@ -4,6 +4,7 @@ import postCSS from "postcss";
 import autoprefixer from "autoprefixer";
 import UglifyJS from "uglify-js";
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import timeToRead  from "eleventy-plugin-time-to-read";
 import Image from "@11ty/eleventy-img";
 import { DateTime } from "luxon";
 import markdownIt from "markdown-it";
@@ -18,6 +19,10 @@ export default async function(eleventyConfig) {
   // 11ty plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(timeToRead, {
+    speed: '850 characters per minute',
+    style: "short"
+  });
 
   // Extra filters
   eleventyConfig.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
