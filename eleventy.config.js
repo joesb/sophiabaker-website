@@ -182,6 +182,7 @@ export default async function(eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy('content/public/');
+  eleventyConfig.addWatchTarget('./src/_sass/');
 };
 
 export const config = {

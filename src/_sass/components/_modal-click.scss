@@ -6,15 +6,24 @@
   max-inline-size: unset;
 
   &:not(.lightbox-active) {
-    .modal-click,
     .modal-click--info {
       display: none;
     }
   }
+}
 
-  &:hover {
-    .modal-click {
-      display: inline-block;
+@include rt.respond-to('medium') {
+  .modal-click-parent {
+    &:not(.lightbox-active) {
+      .modal-click {
+        display: none;
+      }
+    }
+
+    &:hover {
+      .modal-click {
+        display: inline-block;
+      }
     }
   }
 }
