@@ -23,10 +23,10 @@ scripts:
 
         {% set caption %}
         {% if hasCaption %}
-          <aside class="modal-picture-caption portfolio-item--caption">
-            <div class="caption-item caption-title bold">{{ item.caption.title }}</div>
+          <div class="modal-picture-caption portfolio-item--caption">
+            <div class="caption-item caption-title bold">{{ item.caption.title | markdown | safe }}</div>
             {% if item.caption.description %}
-            <div class="caption-item caption-description">{{ item.caption.description }}</div>
+            <div class="caption-item caption-description margin-block-sml smaller">{{ item.caption.description | markdown | safe }}</div>
             {% endif %}
             {% if item.caption.media %}
             <div class="caption-item caption-media"><span class="caption-label">Media:</span> {{ item.caption.media }}</div>
@@ -37,7 +37,10 @@ scripts:
             {% if item.caption.reference %}
             <div class="caption-item caption-reference"><span class="caption-label">Artist reference:</span> {{ item.caption.reference }}</div>
             {% endif %}
-          </aside>
+            {% if item.caption.size %}
+            <div class="caption-item caption-size"><span class="caption-label">Size:</span> {{ item.caption.size }}</div>
+            {% endif %}
+          </div>
           {% endif %}
         {% endset %}
         {% figure caption, "portfolio-item--figure" %}

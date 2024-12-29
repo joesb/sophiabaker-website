@@ -46,6 +46,14 @@ ELEMENTS
     --font-weight-regular: #{var.$base-font-weight-regular};
     --font-weight-bold: #{var.$base-font-weight-bold};
     --font-weight-headings: #{var.$headings-font-weight};
+
+    --font-size-fluid-000: clamp(#{var.$body-v-sml-font-size-mobile}, 1.3vw, #{var.$body-v-sml-font-size});
+    --font-size-fluid-00: clamp(#{var.$body-sml-font-size-mobile}, 1.4vw, #{var.$body-sml-font-size});
+    --font-size-fluid-0: clamp(#{var.$body-font-size-mobile}, 1.5vw, #{var.$body-font-size});
+    --font-size-fluid-01: clamp(#{var.$h4-font-size-mobile}, 1.75vw, #{var.$h3-font-size});
+    --font-size-fluid-21: clamp(#{var.$h2-font-size-mobile}, 2.5vw, #{var.$h2-font-size});
+    --font-size-fluid-3: clamp(#{var.$h1-font-size-mobile}, 4vw, #{var.$h1-font-size});
+    --font-size-fluid-4: clamp(#{var.$h1-lg-font-size-mobile}, 6vw, #{var.$h1-lg-font-size});
   }
   
   html {

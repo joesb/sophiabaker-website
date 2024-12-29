@@ -80,7 +80,6 @@
   .caption-date,
   .caption-reference {
     font-style: italic;
-    font-size: smaller;
   }
 
   .caption-label {
@@ -102,7 +101,7 @@
   .portfolio-item--figure {
     grid-auto-flow: column;
     grid-template-rows: unset;
-    grid-template-columns: minmax(60%, 4fr) minmax(0, 1fr);
+    grid-template-columns: minmax(60%, 3fr) minmax(0, 2fr);
     grid-template-areas: "picture caption";
     align-content: center;
 
@@ -115,6 +114,7 @@
   .lightbox-active {
     .portfolio-item--figure {
       grid-template-rows: unset;
+      grid-template-columns: minmax(60%, 4fr) minmax(0, 1fr);
     }
   }
 
