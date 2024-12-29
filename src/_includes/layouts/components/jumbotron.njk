@@ -1,0 +1,6 @@
+      {# {{ data | debug | safe }} #}
+      <div class="jumbotron{% if layout != 'home.njk' %} content-canvas-item-wide-left{% endif %} margin-block-start-sml margin-block-end-md">
+
+        {{ jumbotron | markdown | safe }}
+        
+      </div>

@@ -4,7 +4,7 @@ title: Aurora
 tags:
   - portfolio
   - independent
-order: 0
+order: 3
 portfolio:
   -
     image:
@@ -17,7 +17,7 @@ portfolio:
         - image-darken-33
     caption:
       title: |
-        **Aurora**
+        #### Aurora
       description: 3-D mixed piece with sculpture wings over a pencil and acrylic painting
       media: |
         Mixed media: pencil and acrylic, with wire and papier maché
@@ -31,7 +31,7 @@ portfolio:
       widths: [300, 600, 1000, 1980]
     caption:
       title: |
-        **Aurora**
+        #### Aurora
       description: With wings open
       media: |
         Mixed media: pencil and acrylic, with wire and papier maché
@@ -40,4 +40,4 @@ portfolio:
     addBorder: true
 ---
 
-A mixed piece exploring my experience of masking as a dimension of my autism.
+A mixed media piece combining pencil drawing and acrylics with 3-dimensional sculpture that explores my experience of masking as a dimension of my autism.

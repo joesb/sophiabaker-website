@@ -186,6 +186,10 @@ export default async function(eleventyConfig) {
     return markdownLibrary.render(content);
   });
 
+  eleventyConfig.addPairedShortcode("Markdown", function(content) {
+    return markdownLibrary.render(content);
+  });
+
   eleventyConfig.addPassthroughCopy('content/public/');
   eleventyConfig.addWatchTarget('./src/_sass/');
 };

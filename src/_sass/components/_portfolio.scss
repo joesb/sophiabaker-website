@@ -66,20 +66,22 @@
 
 .portfolio-item--caption {
   grid-area: caption;
+  padding-inline: 1rem;
 
   .figcaption {
     max-inline-size: 100%;
-    line-height: var(--font-lineheight-2);
     display: grid;
     grid-auto-flow: row;
     gap: var(--size-2);
     padding: var(--size-4);
   }
 
-  .caption-media,
-  .caption-date,
-  .caption-reference {
-    font-style: italic;
+  .caption-item {
+    font-size: var(--font-size-fluid-00);
+
+    &:not(.caption-title) {
+      font-style: italic;
+    }
   }
 
   .caption-label {

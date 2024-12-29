@@ -4,7 +4,7 @@ title: Greek Statue
 tags:
   - portfolio
   - independent
-order: 0
+order: 3
 portfolio:
   -
     image:

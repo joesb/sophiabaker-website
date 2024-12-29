@@ -5,6 +5,9 @@ eleventyNavigation:
   key: Contact
   title: Me
   order: 20
+page:
+  titleClasses:
+    - content-canvas-item-wide-left
 ---
 
 I'm online.

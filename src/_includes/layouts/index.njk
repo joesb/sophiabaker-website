@@ -8,8 +8,18 @@ image:
     - index-list__item__picture
 ---
 
+{# Title bar #}
+<div class="content-canvas">
+  {% include "layouts/components/title-bar.njk" %}
+</div>
+
 {# Main page content #}
 <div class="content-canvas">
+  
+  {% if jumbotron %}
+  {% include "layouts/components/jumbotron.njk" %}
+  {% endif %}
+
   {{ content | safe }}
 </div>
 

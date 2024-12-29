@@ -3,7 +3,7 @@ layout: page.njk
 title: Project Research
 tags:
   - portfolio
-order: 2
+order: 0
 portfolio:
   -
     image:

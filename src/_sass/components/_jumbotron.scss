@@ -1,0 +1,23 @@
+.jumbotron {
+  :where(p) {
+    font-size: var(--font-size-fluid-11);
+    line-height: var(--font-lineheight-2);
+    margin-block: 1.25rem;
+  }
+
+  .smaller {
+    font-size: var(--font-size-fluid-1);
+  }
+
+  :where(small) {
+    font-size: var(--font-size-fluid-01);
+    line-height: 0.5;
+  }
+
+  :where(a) {
+    margin-block:calc(var(--size-00)*-1);
+    margin-inline: calc(var(--size-1)*-1);
+    padding-block:var(--size-00);
+    padding-inline: var(--size-1)
+}
+}

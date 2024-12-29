@@ -15,117 +15,119 @@ ELEMENTS
  * 2. Ensure the page always fills at least the entire height of the viewport.
  */
 
- :root {
-    font-size: base-variables.$root-font-size;
+:root {
+  font-size: base-variables.$root-font-size;
 
-    // colors
-    // cf. https://www.canva.com/colors/color-palettes/watermelon-abstract/
-    --color-chili-pepper: #{var.$color-chili-pepper};
-    --color-jet-black: #{var.$color-jet-black};
-    --color-jet-black-light: #{var.$color-jet-black-light};
-    --color-jet-black-lighter: #{var.$color-jet-black-lighter};
-    --color-ivory: #{var.$color-ivory};
-    --color-ivory-dark: #{var.$color-ivory-dark};
-    --color-ivory-darkish: #{var.$color-ivory-darkish};
-    --color-ivory-darker: #{var.$color-ivory-darker};
-    --color-midnight-blue: #{var.$color-midnight-blue};
-    --color-midnight-blue-dark: #{var.$color-midnight-blue-dark};
+  // colors
+  // cf. https://www.canva.com/colors/color-palettes/watermelon-abstract/
+  --color-chili-pepper: #{var.$color-chili-pepper};
+  --color-jet-black: #{var.$color-jet-black};
+  --color-jet-black-light: #{var.$color-jet-black-light};
+  --color-jet-black-lighter: #{var.$color-jet-black-lighter};
+  --color-ivory: #{var.$color-ivory};
+  --color-ivory-dark: #{var.$color-ivory-dark};
+  --color-ivory-darkish: #{var.$color-ivory-darkish};
+  --color-ivory-darker: #{var.$color-ivory-darker};
+  --color-midnight-blue: #{var.$color-midnight-blue};
+  --color-midnight-blue-dark: #{var.$color-midnight-blue-dark};
 
-    --color-text: var(--color-jet-black);
-    --color-text-lighter: var(--color-jet-black-lighter);
+  --color-text: var(--color-jet-black);
+  --color-text-lighter: var(--color-jet-black-lighter);
 
-    --color-background: var(--color-ivory);
-    --color-background-dark: var(--color-ivory-dark);
-    --color-background-darker: var(--color-ivory-darker);
-    --color-border: var(--color-ivory);
-    --color-border-dark: var(var(--color-jet-black));
+  --color-background: var(--color-ivory);
+  --color-background-dark: var(--color-ivory-dark);
+  --color-background-darker: var(--color-ivory-darker);
+  --color-border: var(--color-ivory);
+  --color-border-dark: var(var(--color-jet-black));
 
-    --font-family-primary: #{var.$primary-font};
-    --font-family-secondary: #{var.$secondary-font};
-    --font-family-headings: #{var.$headings-font};
-    --font-weight-regular: #{var.$base-font-weight-regular};
-    --font-weight-bold: #{var.$base-font-weight-bold};
-    --font-weight-headings: #{var.$headings-font-weight};
+  --font-family-primary: #{var.$primary-font};
+  --font-family-secondary: #{var.$secondary-font};
+  --font-family-headings: #{var.$headings-font};
+  --font-weight-regular: #{var.$base-font-weight-regular};
+  --font-weight-bold: #{var.$base-font-weight-bold};
+  --font-weight-headings: #{var.$headings-font-weight};
 
-    --font-size-fluid-000: clamp(#{var.$body-v-sml-font-size-mobile}, 1.3vw, #{var.$body-v-sml-font-size});
-    --font-size-fluid-00: clamp(#{var.$body-sml-font-size-mobile}, 1.4vw, #{var.$body-sml-font-size});
-    --font-size-fluid-0: clamp(#{var.$body-font-size-mobile}, 1.5vw, #{var.$body-font-size});
-    --font-size-fluid-01: clamp(#{var.$h4-font-size-mobile}, 1.75vw, #{var.$h3-font-size});
-    --font-size-fluid-21: clamp(#{var.$h2-font-size-mobile}, 2.5vw, #{var.$h2-font-size});
-    --font-size-fluid-3: clamp(#{var.$h1-font-size-mobile}, 4vw, #{var.$h1-font-size});
-    --font-size-fluid-4: clamp(#{var.$h1-lg-font-size-mobile}, 6vw, #{var.$h1-lg-font-size});
+  --font-size-fluid-000: clamp(#{var.$body-v-sml-font-size-mobile}, 1vw, #{var.$body-v-sml-font-size});
+  --font-size-fluid-00: clamp(0.7rem, 1.75vw, 0.85rem);
+  --font-size-fluid-0: clamp(0.75rem, 2vw, 1rem);
+  --font-size-fluid-01: clamp(0.875rem, 4vw, 1.125rem);
+  --font-size-fluid-11: clamp(1.125rem, 4.5vw, 1.5rem);
+  --font-size-fluid-12: clamp(1.25rem, 5vw, 2rem);
+  --font-size-fluid-21: clamp(#{var.$h2-font-size-mobile}, 2.5vw, #{var.$h2-font-size});
+  --font-size-fluid-3: clamp(#{var.$h1-font-size-mobile}, 4vw, #{var.$h1-font-size});
+  --font-size-fluid-4: clamp(#{var.$h1-lg-font-size-mobile}, 6vw, #{var.$h1-lg-font-size});
+}
+
+html {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text);
+
+  box-sizing: border-box;
+  min-height: 100%; /* [2] */
+  overflow-y: scroll; /* [1] */
+}
+
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
   }
-  
-  html {
-    font-family: var(--font-family-primary);
-    font-weight: var(--font-weight-regular);
-    color: var(--color-text);
-  
-    box-sizing: border-box;
-    min-height: 100%; /* [2] */
-    overflow-y: scroll; /* [1] */
-  }
-  
-  * {
-    &,
-    &::before,
-    &::after {
-      box-sizing: inherit;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+ul,
+ol {
+  font-family: var.$secondary-font;
+  margin: 0;
+  padding: 0;
+
+  li {
+    font-size: var(--font-size-fluid-0);
+
+    &:last-child {
+      margin-bottom: 0px;
     }
   }
-  
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  a:hover,
-  a:focus {
-    text-decoration: none;
-  }
-  
-  button {
-    background: none;
-    border: none;
-  }
-  
+}
+
+main {
   ul,
   ol {
-    font-family: var.$secondary-font;
-    margin: 0;
-    padding: 0;
-  
-    li {
-      font-size: var(--font-size-fluid-0);
-  
-      &:last-child {
-        margin-bottom: 0px;
-      }
-    }
-  }
-  
-  main {
+    margin-bottom: px-to-rem.px-to-rem(30px);
+    padding-left: px-to-rem.px-to-rem(40px);
+
     ul,
     ol {
-      margin-bottom: px-to-rem.px-to-rem(30px);
-      padding-left: px-to-rem.px-to-rem(40px);
-  
-      ul,
-      ol {
-        margin-bottom: 0;
-      }
-  
-      li {
-        margin: px-to-rem.px-to-rem(9px);
-        line-height: px-to-rem.px-to-rem(27px);
-      }
-  
-      hr {
-        height: px-to-rem.px-to-rem(1px);
-        border: none;
-      }
+      margin-bottom: 0;
+    }
+
+    li {
+      margin: px-to-rem.px-to-rem(9px);
+      line-height: px-to-rem.px-to-rem(27px);
+    }
+
+    hr {
+      height: px-to-rem.px-to-rem(1px);
+      border: none;
     }
   }
+}
 
 // Links, anchors
 
