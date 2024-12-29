@@ -44,7 +44,7 @@ scripts:
           {% endif %}
         {% endset %}
         {% figure caption, "portfolio-item--figure" %}
-          {% image item.image.path, item.image.alt, 'portfolio-item--image image-obj-contain image-max-height-100vh', item.image.widths, 'portfolio-item--picture' %}
+          {% image item.image.path, item.image.alt, 'portfolio-item--image image-obj-contain image-max-height-100vh', item.image.widths, 'auto' %}
         {% endfigure %}
       </div>
       <nav class="modal-click-nav">
