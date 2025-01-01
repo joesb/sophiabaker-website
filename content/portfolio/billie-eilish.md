@@ -3,6 +3,7 @@ layout: page.njk
 title: Billie Eilish
 tags:
   - portfolio
+  - independent
 order: 3
 portfolio:
   -

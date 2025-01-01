@@ -3,6 +3,7 @@ layout: page.njk
 title: Dragon digital art
 tags:
   - portfolio
+  - independent
 order: 4
 portfolio:
   -

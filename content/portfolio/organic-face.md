@@ -3,6 +3,7 @@ layout: page.njk
 title: Organic Face
 tags:
   - portfolio
+  - independent
 order: 3
 portfolio:
   -

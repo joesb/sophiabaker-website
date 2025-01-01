@@ -3,6 +3,7 @@ layout: page.njk
 title: Over Pearly Lakes and Pine Trees Dressed in White
 tags:
   - portfolio
+  - a-level
 order: 0
 jumbotron: My final piece for my A-level art project — an altered book based on *The Priory of the Orange Tree* by Samantha Shannon.
 page:
@@ -64,4 +65,3 @@ portfolio:
 ---
 
 The alteration uses a key passage in the middle of the book in which the main characters make an epic journey across wild landscapes as they prepare for the ultimate challenge — to defeat the great foe, The Nameless One, and save the world.
-
