@@ -1,6 +1,7 @@
 ---
 layout: index.njk
-title: Hello world
+title: Hello
+description: Artist in Birmingham, UK, currently studying for A-level fine art
 showTitle: false
 image:
   social: ./content/public/images/portfolio/final-piece/IMG_3671-wide.jpeg

@@ -1,0 +1,38 @@
+{% set cardType %}summary_large_image{% endset %}
+
+{% set absoluteUrl %}{{ page.url | url | absoluteUrl(meta.url) }}{% endset %}
+
+{% if page.url == '/' %}
+{% set cardTitle %}{{ meta.title }} — {{ meta.summary }}{% endset %}
+{% set ogType %}website{% endset %}
+{% else %}
+{% set cardTitle %}{{ title }} | {{ meta.title }}{% endset %}
+{% set ogType %}article{% endset %}
+{% endif %}
+
+{% if description and excerpt|length == 0 %}
+{% set excerpt = description %}
+{% endif %}
+
+{# {% if image.path %}
+  {% set cardImage %}{{ meta.url }}{% imageData image.path %}{% endset %}
+{% endif %} #}
+  <meta name="twitter:card" content="{{cardType}}" />
+  <meta name="twitter:site" content="{{ meta.twitter }}" />
+  <meta name="twitter:creator" content="{{ meta.author.name }}" />
+  <meta property="twitter:title" content="{{cardTitle}}" />
+  <meta property="twitter:description" content="{% if excerpt %}{{excerpt}}{% else %}{{meta.summary}}{% endif %}" />
+  {% if image.social or image.path %}
+  <meta property="twitter:image" content="{{ meta.url }}{% if image.social %}{% imageData image.social %}{% else %}{% imageData image.path %}{% endif %}" />
+  {% endif %}
+  <meta property="twitter:site" content="{{ meta.twitter }}" />
+  <meta property="og:url" content="{{ absoluteUrl }}" />
+  <meta property="og:title" content="{{cardTitle}}" />
+  <meta property="og:description" content="{% if excerpt %}{{excerpt}}{% else %}{{meta.summary}}{% endif %}" />
+  {% if image.social or image.path %}
+  <meta property="og:image" content="{{ meta.url }}{% if image.social %}{% imageData image.social %}{% else %}{% imageData image.path %}{% endif %}" />
+    {% if image.alt %}
+  <meta property="og:image:alt" content="{{ image.alt }}">
+    {% endif %}
+  {% endif %}
+  <meta property="og:type" content="{{ogType}}" />

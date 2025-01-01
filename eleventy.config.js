@@ -94,6 +94,21 @@ export default async function(eleventyConfig) {
 		return Image.generateHTML(metadata, imageAttributes, options);
 	});
 
+  eleventyConfig.addAsyncShortcode("imageData", async function(src) {
+    var picture = await getPictureData(src, [800]);
+    return picture.jpeg[0].url;
+  });
+
+  async function getPictureData(src, widths = [300, 620, 1000, 1980]) {
+    let metadata = await Image(src, {
+      widths: widths,
+      formats: ['jpeg'],
+      urlPath: "/public/img/",
+      outputDir: "./content/public/img/"
+    });
+    return metadata;
+  };
+
   // Add the dev server middleware manually
   eleventyConfig.addPlugin(eleventyImageOnRequestDuringServePlugin);
 
