@@ -3,7 +3,7 @@ layout: page.njk
 title: Book Design Research
 tags:
   - portfolio
-order: 0
+order: 1
 portfolio:
   -
     image:

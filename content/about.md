@@ -14,5 +14,5 @@ I'm online.
 
 You can find me at:
 
-- Instagram
+- [Instagram](https://www.instagram.com/sophias._galleria/){rel="nofollow ugc noopener" target="_blank"}
 - TikTok

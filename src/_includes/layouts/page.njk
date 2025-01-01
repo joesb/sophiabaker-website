@@ -9,6 +9,11 @@ scripts:
 </div>
 
 <div class="content-canvas">
+
+  {% if jumbotron %}
+  {% include "layouts/components/jumbotron.njk" %}
+  {% endif %}
+
   {{ content | safe }}
 </div>
 
