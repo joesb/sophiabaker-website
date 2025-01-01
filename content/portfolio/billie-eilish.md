@@ -18,7 +18,7 @@ portfolio:
         - image-darken-33
     caption:
       title: |
-        #### Billie Eilish
+        ### Billie Eilish
       media: Pencil
       date: October 2024
       size: A3

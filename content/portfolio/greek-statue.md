@@ -18,7 +18,7 @@ portfolio:
         - image-darken-33
     caption:
       title: |
-        **Greek Statue**
+        ### Greek Statue
       description: Pencil sketch of a greek statue
       media: |
         Pencil

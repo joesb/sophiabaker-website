@@ -18,7 +18,7 @@ portfolio:
         - image-darken-33
     caption:
       title: |
-        #### Organic face drawing
+        ### Organic face drawing
       media: Fine liner
       date: August 2023
       size: A4
