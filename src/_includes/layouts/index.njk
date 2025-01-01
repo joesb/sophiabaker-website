@@ -9,9 +9,11 @@ image:
 ---
 
 {# Title bar #}
+{% if showTitle %}
 <div class="content-canvas">
   {% include "layouts/components/title-bar.njk" %}
 </div>
+{% endif %}
 
 {# Main page content #}
 <div class="content-canvas">
