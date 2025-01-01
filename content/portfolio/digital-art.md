@@ -1,10 +1,13 @@
 ---
 layout: page.njk
 title: Digital Art
+description: A selection of digital art created with Procreate on iPad
 tags:
   - portfolio
   - independent
 order: 4
+image:
+  social: "./content/public/images/portfolio/digital/IMG_0156.jpeg"
 portfolio:
   -
     image:
