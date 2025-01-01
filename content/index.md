@@ -3,6 +3,7 @@ layout: index.njk
 title: Hello world
 showTitle: false
 image:
+  social: ./content/public/images/portfolio/final-piece/IMG_3671-wide.jpeg
   src: ./content/public/images/portfolio/final-piece/IMG_3671-wide.jpeg
   alt: "Over Pearly Lakes and Pine Trees Dressed in White altered book"
   widths:
