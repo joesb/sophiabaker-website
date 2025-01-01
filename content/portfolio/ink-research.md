@@ -8,7 +8,7 @@ order: 1
 portfolio:
   -
     image:
-      path: "./content/public/images/portfolio/ink-research/IMG_3750.jpeg"
+      path: "./content/public/images/portfolio/ink-forest/IMG_3748.jpeg"
       alt: "Research work — Ink"
       widths: [300, 600, 1000, 1980]
       classes:
@@ -17,11 +17,22 @@ portfolio:
         - image-darken-25
     caption:
       title: |
+        ### Ink Forest
+      description: The culmination of ink experimentation — my own imagery of a forest, created with layering and fine liner details in bark and other aspects
+      date: June 2024
+      media: Ink, fine liner
+    addBorder: true
+  -
+    image:
+      path: "./content/public/images/portfolio/ink-research/IMG_3750.jpeg"
+      alt: "Research work — Ink"
+      widths: [300, 600, 1000, 1980]
+    caption:
+      title: |
         ### Research in Ink
       description: Double-page spread of research in ink techniques through experimentation, analysis and refinement
       date: June 2024
       size: A3 double-page art pad
-    addBorder: true
   -
     image:
       path: "./content/public/images/portfolio/ink-research/IMG_3751.jpeg"
