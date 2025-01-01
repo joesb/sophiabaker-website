@@ -123,6 +123,12 @@
     }
   }
 
+  &.tiktok {
+    &::after {
+      mask-image: url("/public/images/icons/tiktok.svg");
+    }
+  }
+
   &.facebook {
     &::after {
       mask-image: url("/public/images/icons/facebook.svg");
@@ -146,4 +152,8 @@
       mask-image: url("/public/images/icons/medium.svg");
     }
   }
+}
+
+.footer-main__container__contact-me__list {
+  display: flex;
 }

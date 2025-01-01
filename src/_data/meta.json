@@ -6,6 +6,12 @@
       "machine_name": "instagram",
       "url": "https://www.instagram.com/sophias._galleria/",
       "alias": "@sophias._galleria"
+    },
+    {
+      "name": "TikTok",
+      "machine_name": "tiktok",
+      "url": "https://www.tiktok.com/@soap_posts",
+      "alias": "@soap_posts"
     }
   ]
 }
