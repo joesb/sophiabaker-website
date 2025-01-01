@@ -3,6 +3,10 @@ layout: base.njk
 scripts:
   - lightbox.js
 ---
+{# Title bar #}
+<div class="content-canvas">
+  {% include "layouts/components/title-bar.njk" %}
+</div>
 
 <div class="content-canvas">
   {{ content | safe }}
