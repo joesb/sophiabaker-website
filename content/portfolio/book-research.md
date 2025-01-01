@@ -8,6 +8,23 @@ order: 1
 portfolio:
   -
     image:
+      path: "./content/public/images/portfolio/book-research/IMG_3042.jpeg"
+      alt: "Research work — Book"
+      widths: [300, 600, 1000, 1980]
+      classes:
+        - image-obj-cover
+        - index-list__item__picture
+        - image-darken-25
+    caption:
+      title: |
+        ### Concertina Book
+      description: The culmination of my research work on concertina book design, using insights and learning from the experiments outlined here
+      date: July 2024
+      size: 12x12cm x 10 page concertina
+      media: Fine liner, watercolour
+    addBorder: true
+  -
+    image:
       path: "./content/public/images/portfolio/book-research/IMG_3757.jpeg"
       alt: "Research work — Ink"
       widths: [300, 600, 1000, 1980]
