@@ -16,7 +16,7 @@
   left: 0;
   z-index: 2;
   padding: p2r.px-to-rem(145px) p2r.px-to-rem(25px) p2r.px-to-rem(25px) p2r.px-to-rem(25px);
-  background-color: var(--color-background);
+  background-color: var(--color-background-site-header);
 }
 
 .open-mobile {
@@ -27,7 +27,7 @@
 
 .main-nav--list--item-link {
   &:hover {
-    color: var(--text-1);
+    color: var(--color-white);
     text-decoration-line: underline;
   }
 
@@ -58,7 +58,7 @@
     padding: 0;
 
     &:not(:last-child) {
-      border-right: 1px solid var(--color-text);
+      border-right: 1px solid var(--color-white);
     }
   }
 }

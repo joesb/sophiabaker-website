@@ -30,6 +30,7 @@ ELEMENTS
   --color-ivory-darker: #{var.$color-ivory-darker};
   --color-midnight-blue: #{var.$color-midnight-blue};
   --color-midnight-blue-dark: #{var.$color-midnight-blue-dark};
+  --color-white: #{var.$color-white};
 
   --color-text: var(--color-jet-black);
   --color-text-lighter: var(--color-jet-black-lighter);
@@ -37,6 +38,7 @@ ELEMENTS
   --color-background: var(--color-ivory);
   --color-background-dark: var(--color-ivory-dark);
   --color-background-darker: var(--color-ivory-darker);
+  --color-background-site-header: var(--color-midnight-blue);
   --color-border: var(--color-ivory);
   --color-border-dark: var(var(--color-jet-black));
 
