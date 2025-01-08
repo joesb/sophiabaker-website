@@ -6,7 +6,6 @@
 }
 
 .header-main__logo {
-  color: var(--color-white);
   position: relative;
   z-index: 10;
 }
@@ -30,7 +29,7 @@
 
   .open-text {
     display: none;
-    color: var(--color-white);
+    color: var(--text-1);
   }
 
   .header-main__menu__burger {
@@ -45,7 +44,7 @@
       height: px-to-rem.px-to-rem(3px);
       transition: 0.3s ease-in-out;
       border-radius: px-to-rem.px-to-rem(2px);
-      background-color: var(--color-white);
+      background-color: var(--text-1);
       margin-bottom: px-to-rem.px-to-rem(4px);
     }
   }
@@ -54,7 +53,7 @@
 .header-main {
   padding-block: 1rem;
   margin-block-end: 2.5rem;
-  background: var(--color-background-site-header);
+  background: var(--color-tea-green);
 
   :where(h1) {
     margin-block: 1.5rem;
@@ -74,7 +73,7 @@
       &.js-closed {
         .header-main__menu__burger {
           div {
-            background-color: var(--color-white);
+            background-color: var(--text-1);
           }
           div:nth-child(1) {
             transition: 0.3s ease-in-out;
