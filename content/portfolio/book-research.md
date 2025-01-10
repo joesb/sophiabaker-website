@@ -8,7 +8,7 @@ order: 1
 portfolio:
   -
     image:
-      path: "./content/public/images/portfolio/book-research/IMG_3042.jpeg"
+      path: "./content/public/images/portfolio/book-research/IMG_4244.jpeg"
       alt: "Research work — Book"
       widths: [300, 600, 1000, 1980]
       classes:
