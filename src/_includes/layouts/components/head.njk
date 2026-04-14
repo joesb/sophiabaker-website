@@ -26,10 +26,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   
+  {# OpenProps #}
+  <link rel="stylesheet" href="//unpkg.com/open-props@1.7.13/open-props.min.css" />
+  <link rel="stylesheet" href="//unpkg.com/open-props@1.7.13/normalize.light.min.css" />
+  <link rel="stylesheet" href="//unpkg.com/open-props@1.7.13/buttons.light.min.css" />
   {% set css %}
     {% include "assets/css/styles.css" %}
   {% endset %}
-  <style>{{ css | safe }}</style>
+  <style>{{ css | cssmin | safe }}</style>
 
   {% if styles %}
     {% for style in styles %}
