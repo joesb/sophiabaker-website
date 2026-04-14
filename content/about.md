@@ -14,5 +14,5 @@ I'm online.
 
 You can find me at:
 
-- [Instagram — @sophias._galleria](https://www.instagram.com/sophias._galleria/){rel="nofollow ugc noopener" target="_blank"}
+- [Instagram — @soap_draws6](https://www.instagram.com/soap_draws6/){rel="nofollow ugc noopener" target="_blank"}
 - [TikTok — @soap_posts](https://www.tiktok.com/@soap_posts){rel="nofollow ugc noopener" target="_blank"}
