@@ -2980,6 +2980,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss@npm:^8.5.12":
+  version: 8.5.12
+  resolution: "postcss@npm:8.5.12"
+  dependencies:
+    nanoid: ^3.3.11
+    picocolors: ^1.1.1
+    source-map-js: ^1.2.1
+  checksum: e11818908d9f1693438bd7c6e3af99431552f5c9b3f400ebe76af3f25bd1b1efb26bc4c13533f3dcff45540a66ad4e84c62e06491f88003bbfa4ef35b6175f55
+  languageName: node
+  linkType: hard
+
 "postcss@npm:^8.5.9":
   version: 8.5.10
   resolution: "postcss@npm:8.5.10"
@@ -3435,7 +3446,7 @@ __metadata:
     markdown-it-anchor: ^9.2.0
     markdown-it-attrs: ^4.3.1
     markdown-it-eleventy-img: ^0.10.2
-    postcss: ^8.5.9
+    postcss: ^8.5.12
     postcss-cli: ^11.0.1
     rimraf: ^6.1.3
     sass: ^1.99.0
