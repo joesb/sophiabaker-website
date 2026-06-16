@@ -30,7 +30,7 @@
     "luxon": "^3.7.2",
     "markdown-it": "^14.1.1",
     "markdown-it-anchor": "^9.2.0",
-    "markdown-it-attrs": "^4.3.1",
+    "markdown-it-attrs": "^5.0.0",
     "markdown-it-eleventy-img": "^0.10.2",
     "postcss": "^8.5.15",
     "postcss-cli": "^11.0.1",

@@ -2354,12 +2354,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it-attrs@npm:^4.3.1":
-  version: 4.3.1
-  resolution: "markdown-it-attrs@npm:4.3.1"
+"markdown-it-attrs@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "markdown-it-attrs@npm:5.0.0"
   peerDependencies:
     markdown-it: ">= 9.0.0"
-  checksum: 907458ef50372c3a557f883e961ba05a126c6d08878d7e6551a80e4ea19eb2589f486d7d702a771ad4746599ff00ec3cab5416b99ebc93a07e4e4c64237420ec
+  checksum: 3a4accb8603df4cc8ce902267a5a06dec344f749407f6ac3bb8b17db39d0b20d8feceb3b68393ff4c78c7edb356c0e51ddd8ad9d38a4f176c3fd70ebb9ed8767
   languageName: node
   linkType: hard
 
@@ -3453,7 +3453,7 @@ __metadata:
     luxon: ^3.7.2
     markdown-it: ^14.1.1
     markdown-it-anchor: ^9.2.0
-    markdown-it-attrs: ^4.3.1
+    markdown-it-attrs: ^5.0.0
     markdown-it-eleventy-img: ^0.10.2
     postcss: ^8.5.15
     postcss-cli: ^11.0.1
