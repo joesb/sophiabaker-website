@@ -273,7 +273,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/css-calc@npm:^3.3.0":
+"@csstools/css-calc@npm:^3.3.0, @csstools/css-calc@npm:^3.4.3":
   version: 3.4.3
   resolution: "@csstools/css-calc@npm:3.4.3"
   peerDependencies:
@@ -292,7 +292,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/css-syntax-patches-for-csstree@npm:^1.1.8, @csstools/css-syntax-patches-for-csstree@npm:^1.1.9":
+"@csstools/css-syntax-patches-for-csstree@npm:^1.1.15":
+  version: 1.1.16
+  resolution: "@csstools/css-syntax-patches-for-csstree@npm:1.1.16"
+  peerDependencies:
+    css-tree: ^3.2.1
+  peerDependenciesMeta:
+    css-tree:
+      optional: true
+  checksum: 41dc668a3698ca37182a785d9f064f1b0ad4a19d68bbd96ecb42082433fdac286553b013e74960ec1aa56ed71d7eb0450e753b0201637bed3a3ca42189902896
+  languageName: node
+  linkType: hard
+
+"@csstools/css-syntax-patches-for-csstree@npm:^1.1.9":
   version: 1.1.15
   resolution: "@csstools/css-syntax-patches-for-csstree@npm:1.1.15"
   peerDependencies:
@@ -3249,6 +3261,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-resolve-nested-selector@npm:^0.1.7":
+  version: 0.1.7
+  resolution: "postcss-resolve-nested-selector@npm:0.1.7"
+  checksum: 7d1e253d5292fc1f836ed3f3a47ca992ebd07640962521349f7181e4c304e2ddb7a86d1e2c1996710cdcb11e23a7a1d58575966e2b9a65fc198b27da9a3a0ed3
+  languageName: node
+  linkType: hard
+
 "postcss-safe-parser@npm:^7.0.1":
   version: 7.0.1
   resolution: "postcss-safe-parser@npm:7.0.1"
@@ -3860,7 +3879,7 @@ __metadata:
     stylelint-config-standard: ^40.0.0
     stylelint-config-standard-scss: ^17.0.0
     stylelint-prettier: ^5.0.3
-    stylelint-scss: ^7.3.0
+    stylelint-scss: ^7.4.0
   languageName: unknown
   linkType: soft
 
@@ -4060,24 +4079,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-scss@npm:^7.3.0":
-  version: 7.3.0
-  resolution: "stylelint-scss@npm:7.3.0"
+"stylelint-scss@npm:^7.4.0":
+  version: 7.4.0
+  resolution: "stylelint-scss@npm:7.4.0"
   dependencies:
-    "@csstools/css-calc": ^3.3.0
+    "@csstools/css-calc": ^3.4.3
     "@csstools/css-parser-algorithms": ^4.0.0
-    "@csstools/css-syntax-patches-for-csstree": ^1.1.8
+    "@csstools/css-syntax-patches-for-csstree": ^1.1.15
     "@csstools/css-tokenizer": ^4.0.0
     css-tree: ^3.2.1
     is-plain-object: ^5.1.0
     known-css-properties: ^0.37.0
     postcss-media-query-parser: ^0.2.3
-    postcss-resolve-nested-selector: ^0.1.6
+    postcss-resolve-nested-selector: ^0.1.7
     postcss-selector-parser: ^7.1.6
     postcss-value-parser: ^4.2.0
   peerDependencies:
     stylelint: ^16.8.2 || ^17.0.0
-  checksum: 8311b383bd82d76f5c3cfeb91fb9b7a357eadedb8b1a6867627dae183ea1076b3961d10690d888c518bbbaecceda88a5dce4d9187b1f5b46d403bc50ce86e173
+  checksum: f5af9ce79866ab42c84ee137b1946f72259703e056b9402411e64c93f63ef107b574ae48c05988dd5f8dacc40f8e3ff4ce615d5e8242e1424387bfdb8cf1e1a1
   languageName: node
   linkType: hard
 
